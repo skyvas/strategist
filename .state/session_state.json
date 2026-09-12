@@ -1,0 +1,17 @@
+{
+  "session_id": "session_bootstrap_001",
+  "phase": "discovery",
+  "host_model_mode": "gemini",
+  "active_agents": [
+    "context_manager",
+    "business_analyst"
+  ],
+  "token_tracker": {
+    "active_tokens": 0,
+    "compaction_threshold": 100000,
+    "turn_count": 0,
+    "max_turns_before_compaction": 20
+  },
+  "last_active_task": "Awaiting core business problem description from user",
+  "checkpoints": []
+}

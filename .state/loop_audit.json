@@ -1,0 +1,19 @@
+{
+  "max_loop_retries": 5,
+  "circuit_breaker_triggered": false,
+  "current_ticket": null,
+  "loop_a_tdd": {
+    "target": "Swarm Developer <-> QA Adversary",
+    "iteration_count": 0,
+    "pass_status": false,
+    "bounce_history": [],
+    "last_failure_diff": null
+  },
+  "loop_b_devops": {
+    "target": "Swarm Developer <-> DevOps Agent",
+    "iteration_count": 0,
+    "pass_status": false,
+    "bounce_history": [],
+    "last_remediation_report": null
+  }
+}
