@@ -1,0 +1,20 @@
+{
+  "name": "audit_runtime_and_security",
+  "description": "Executes Loop B DevOps checks: linting, syntax validation, self-contained server execution, and responsive viewport checks",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "target_dir": {
+        "type": "string",
+        "description": "Target workspace directory for runtime inspection"
+      },
+      "check_responsive": {
+        "type": "boolean",
+        "description": "Validate Samsung Tab A8 and mobile viewport CSS rules"
+      }
+    },
+    "required": [
+      "target_dir"
+    ]
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "title": "Strategist Autonomous Multi-Agent Organizational Mesh",
+  "updated_at": "2026-09-12T10:22:04.737378+00:00",
+  "recruiter_mode": "Zero Synthetic Generation - 100% Repository Sourced",
+  "source_repo": "https://github.com/alirezarezvani/claude-skills",
+  "total_agents": 14,
+  "agents": {
+    "cs-bizops-orchestrator": {
+      "title": "Business Operations & Process Lead",
+      "domain": "business-operations",
+      "loop": "Loop 1 (Problem Discovery & Wait-Time Audit)",
+      "upstream": [
+        "User",
+        "Recruiter / Org Manager"
+      ],
+      "downstream": [
+        "cs-pm-orchestrator",
+        "cs-engineering-lead"
+      ],
+      "loop_peers": [
+        "cs-pm-orchestrator"
+      ],
+      "installed": true
+    },
+    "cs-pm-orchestrator": {
+      "title": "Delivery & Project Management Orchestrator",
+      "domain": "project-management",
+      "loop": "Loop 1 (Problem Discovery & Wait-Time Audit)",
+      "upstream": [
+        "cs-bizops-orchestrator"
+      ],
+      "downstream": [
+        "cs-engineering-lead",
+        "cs-workflow-architect"
+      ],
+      "loop_peers": [
+        "cs-bizops-orchestrator"
+      ],
+      "installed": true
+    },
+    "cs-engineering-lead": {
+      "title": "Engineering Lead & Technical System Architect",
+      "domain": "engineering",
+      "loop": "Loop 2 (Architecture & System Design)",
+      "upstream": [
+        "cs-pm-orchestrator",
+        "cs-bizops-orchestrator"
+      ],
+      "downstream": [
+        "cs-frontend-engineer",
+        "cs-backend-engineer",
+        "test-architect"
+      ],
+      "loop_peers": [
+        "cs-senior-engineer",
+        "cs-workflow-architect"
+      ],
+      "installed": true
+    },
+    "cs-workflow-architect": {
+      "title": "Workflow, DAG & State Machine Architect",
+      "domain": "engineering",
+      "loop": "Loop 2 (Architecture & System Design)",
+      "upstream": [
+        "cs-engineering-lead"
+      ],
+      "downstream": [
+        "hub-coordinator",
+        "cs-backend-engineer"
+      ],
+      "loop_peers": [
+        "cs-engineering-lead"
+      ],
+      "installed": true
+    },
+    "cs-frontend-engineer": {
+      "title": "Frontend Engineering Orchestrator (UI/UX, Mobile, Tablet)",
+      "domain": "engineering",
+      "loop": "Loop 3 (TDD Implementation Loop) & Loop 4 (Code Quality)",
+      "upstream": [
+        "cs-engineering-lead",
+        "test-architect"
+      ],
+      "downstream": [
+        "test-debugger",
+        "karpathy-reviewer"
+      ],
+      "loop_peers": [
+        "cs-backend-engineer",
+        "test-architect",
+        "karpathy-reviewer"
+      ],
+      "installed": true
+    },
+    "cs-backend-engineer": {
+      "title": "Backend Engineering Orchestrator (API, Persistence, Microservices)",
+      "domain": "engineering",
+      "loop": "Loop 3 (TDD Implementation Loop) & Loop 4 (Code Quality)",
+      "upstream": [
+        "cs-engineering-lead",
+        "test-architect"
+      ],
+      "downstream": [
+        "test-debugger",
+        "karpathy-reviewer",
+        "devops-engineer"
+      ],
+      "loop_peers": [
+        "cs-frontend-engineer",
+        "test-architect",
+        "karpathy-reviewer"
+      ],
+      "installed": true
+    },
+    "cs-fullstack-engineer": {
+      "title": "Fullstack Rapid Prototyper",
+      "domain": "engineering",
+      "loop": "Loop 3 (TDD Implementation Loop)",
+      "upstream": [
+        "cs-engineering-lead"
+      ],
+      "downstream": [
+        "test-architect",
+        "karpathy-reviewer"
+      ],
+      "loop_peers": [
+        "cs-senior-engineer"
+      ],
+      "installed": true
+    },
+    "cs-senior-engineer": {
+      "title": "Senior Staff Engineer (Patterns & Resilience)",
+      "domain": "engineering",
+      "loop": "Loop 4 (Code Quality & Review)",
+      "upstream": [
+        "cs-frontend-engineer",
+        "cs-backend-engineer"
+      ],
+      "downstream": [
+        "devops-engineer",
+        "hub-coordinator"
+      ],
+      "loop_peers": [
+        "karpathy-reviewer",
+        "cs-engineering-lead"
+      ],
+      "installed": true
+    },
+    "test-architect": {
+      "title": "Test Architect & Adversarial Strategy Lead",
+      "domain": "testing",
+      "loop": "Loop 3 (TDD Implementation Loop)",
+      "upstream": [
+        "cs-engineering-lead",
+        "03_TEST_ACCEPTANCE.md"
+      ],
+      "downstream": [
+        "cs-frontend-engineer",
+        "cs-backend-engineer",
+        "test-debugger"
+      ],
+      "loop_peers": [
+        "cs-frontend-engineer",
+        "cs-backend-engineer"
+      ],
+      "installed": true
+    },
+    "test-debugger": {
+      "title": "Runtime Test Debugger & Assertion Verifier",
+      "domain": "testing",
+      "loop": "Loop 3 (TDD Implementation Loop)",
+      "upstream": [
+        "cs-frontend-engineer",
+        "cs-backend-engineer"
+      ],
+      "downstream": [
+        "test-architect",
+        "karpathy-reviewer"
+      ],
+      "loop_peers": [
+        "test-architect"
+      ],
+      "installed": true
+    },
+    "karpathy-reviewer": {
+      "title": "Adversarial Code Reviewer & Cleanliness Auditor",
+      "domain": "engineering",
+      "loop": "Loop 4 (Code Quality & Review)",
+      "upstream": [
+        "cs-frontend-engineer",
+        "cs-backend-engineer"
+      ],
+      "downstream": [
+        "cs-senior-engineer",
+        "devops-engineer"
+      ],
+      "loop_peers": [
+        "cs-senior-engineer"
+      ],
+      "installed": true
+    },
+    "devops-engineer": {
+      "title": "DevOps & Infrastructure Engineer",
+      "domain": "devops",
+      "loop": "Loop 5 (Runtime, Security & Infrastructure)",
+      "upstream": [
+        "karpathy-reviewer",
+        "cs-senior-engineer"
+      ],
+      "downstream": [
+        "hub-coordinator",
+        "Production Deployment"
+      ],
+      "loop_peers": [
+        "cs-backend-engineer",
+        "hub-coordinator"
+      ],
+      "installed": true
+    },
+    "hub-coordinator": {
+      "title": "AgentHub Multi-Agent Swarm Coordinator",
+      "domain": "orchestration",
+      "loop": "Orchestration & Convergence Governor",
+      "upstream": [
+        "Recruiter / Chief Org Manager",
+        "devops-engineer"
+      ],
+      "downstream": [
+        "All Swarm Workers",
+        "cs-handoff-author"
+      ],
+      "loop_peers": [
+        "Recruiter / Chief Org Manager"
+      ],
+      "installed": true
+    },
+    "cs-handoff-author": {
+      "title": "Context Compaction & Shift Handoff Author",
+      "domain": "productivity",
+      "loop": "Continuity & Handoff Loop",
+      "upstream": [
+        "hub-coordinator",
+        "Context Manager"
+      ],
+      "downstream": [
+        "Next Agent / Next Shift Lead"
+      ],
+      "loop_peers": [
+        "Context Manager"
+      ],
+      "installed": true
+    }
+  },
+  "execution_loops": {
+    "loop_1_discovery": {
+      "name": "Problem Discovery & Wait-Time Audit Loop",
+      "description": "Uncovers the ground-truth bottleneck, separates Value-Add from Wait and Rework time.",
+      "primary_agent": "cs-bizops-orchestrator",
+      "feedback_peers": [
+        "cs-pm-orchestrator",
+        "User"
+      ]
+    },
+    "loop_2_architecture": {
+      "name": "System Architecture & Workflow Topology Loop",
+      "description": "Translates ground-truth requirements into state-machine DAGs and system boundaries.",
+      "primary_agent": "cs-engineering-lead",
+      "feedback_peers": [
+        "cs-workflow-architect",
+        "cs-senior-engineer"
+      ]
+    },
+    "loop_3_tdd_adversarial": {
+      "name": "Loop A: TDD Adversarial Implementation Loop",
+      "description": "Test Architect writes adversarial tests first. Swarm engineers implement until 100% pass.",
+      "workers": [
+        "cs-frontend-engineer",
+        "cs-backend-engineer",
+        "cs-fullstack-engineer"
+      ],
+      "adversaries": [
+        "test-architect",
+        "test-debugger"
+      ],
+      "circuit_breaker": "5 retries max before escalation"
+    },
+    "loop_4_code_quality": {
+      "name": "Adversarial Code Review & Patterns Loop",
+      "description": "Audits simplicity, readability, and resilience before promotion.",
+      "workers": [
+        "cs-frontend-engineer",
+        "cs-backend-engineer"
+      ],
+      "reviewers": [
+        "karpathy-reviewer",
+        "cs-senior-engineer"
+      ]
+    },
+    "loop_5_devops_infrastructure": {
+      "name": "Loop B: DevOps Runtime & Security Verification Loop",
+      "description": "Verifies container builds, static analysis, secrets, responsive viewports, and local health.",
+      "workers": [
+        "cs-frontend-engineer",
+        "cs-backend-engineer"
+      ],
+      "auditor": "devops-engineer"
+    },
+    "loop_6_governance_handoff": {
+      "name": "Governance, Swarm Coordination & Context Handoff",
+      "description": "Monitors token utilization, compacts memory state, and executes shift/turn handoffs.",
+      "governors": [
+        "hub-coordinator",
+        "cs-handoff-author",
+        "Context Manager"
+      ]
+    }
+  }
+}
