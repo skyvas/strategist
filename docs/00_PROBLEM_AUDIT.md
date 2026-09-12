@@ -1,7 +1,7 @@
 # 00: Problem Audit & Business Context
 
-> **Author**: Business Discovery & Requirements Analyst  
-> **Status**: In Discovery (Phase 1 Gate)  
+> **Author**: Business Discovery & Requirements Analyst (Recruited from `claude-skills`)  
+> **Status**: In Discovery (Phase 1: Root Problem & Metric Audit)  
 > **Project**: Strategist  
 
 ---
@@ -22,8 +22,7 @@
 
 ## 3. Scope & Anti-Goals
 - **In Scope (Core Objectives)**:
-  - Objective 1: ...
-  - Objective 2: ...
+  - Objective 1: *[TBD]*
 - **Anti-Goals (Explicitly Eliminated Paths)**:
   - *No unnecessary UI/App if a headless script/webhook solves the problem.*
   - *No redundant features outside the core metric fix.*

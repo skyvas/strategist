@@ -1,0 +1,20 @@
+{
+  "name": "run_adversarial_qa_suite",
+  "description": "Executes Loop A adversarial test cases against warehouse ticket state transitions",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "test_suite": {
+        "type": "string",
+        "description": "Target test suite identifier (e.g. LoopA_WarehouseOps)"
+      },
+      "fail_fast": {
+        "type": "boolean",
+        "description": "Stop on first assertion failure"
+      }
+    },
+    "required": [
+      "test_suite"
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "session_id": "session_bootstrap_001",
+  "session_id": "session_bootstrap_003",
   "phase": "discovery",
   "host_model_mode": "gemini",
   "active_agents": [
@@ -7,9 +7,9 @@
     "business_analyst"
   ],
   "token_tracker": {
-    "active_tokens": 0,
+    "active_tokens": 100,
     "compaction_threshold": 100000,
-    "turn_count": 0,
+    "turn_count": 1,
     "max_turns_before_compaction": 20
   },
   "last_active_task": "Awaiting core business problem description from user",

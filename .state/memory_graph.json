@@ -1,8 +1,17 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "project_name": "Strategist",
-  "last_updated": "2026-09-12T02:33:00Z",
-  "decisions_made": [],
-  "open_questions": [],
-  "eliminated_paths": []
+  "last_updated": "2026-09-12T10:25:00Z",
+  "decisions_made": [
+    "Recruited Business Analyst (cs-bizops-orchestrator) and process-mapper skills from https://github.com/alirezarezvani/claude-skills.",
+    "Adopted Lean / Theory of Constraints canon and Matt Pocock grill discipline for discovery.",
+    "Elevated Recruiter Agent to Chief Organizational Manager with zero synthetic markdown generation policy and 14 core real agents imported."
+  ],
+  "open_questions": [
+    "What core business problem, broken operational workflow, or broken metric are you facing?"
+  ],
+  "eliminated_paths": [
+    "Prematurely jumping to a fullstack React/Node web app before identifying ground truth.",
+    "Generating synthetic/stub markdown files for engineers instead of importing real agents from claude-skills."
+  ]
 }
