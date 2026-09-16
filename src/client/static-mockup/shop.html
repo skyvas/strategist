@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shop All Artisanal Pickles & Condiments | Kairi & Co.</title>
+  <meta name="description" content="Explore our full collection of small-batch Indian achar pickles. Traditional Punjabi mango, fiery Andhra tomato garlic, hot honey fusion, and smoky chili crisp.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>🇨🇦 FREE EXPRESS SHIPPING ACROSS CANADA ON ORDERS OVER $50 CAD</span>
+    <span class="badge-cad">CAD $ (Canada)</span>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">KAIRI & CO.</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="active">Shop All</a>
+        <a href="index.html#collections">Collections</a>
+        <a href="index.html#bundle-builder">Build a Box</a>
+        <a href="story.html">Our Story</a>
+        <a href="index.html#recipes">Recipes</a>
+      </nav>
+      <div class="header-actions">
+        <button class="header-btn" title="Search Catalog">🔍 Search</button>
+        <button id="cart-icon-btn" class="header-btn cart-btn">
+          Cart <span class="cart-badge">0</span>
+        </button>
+        <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="section-header" style="margin-bottom: 30px;">
+      <span class="section-eyebrow">The Complete Pantry</span>
+      <h1 class="section-title">All Small-Batch Condiments</h1>
+      <p class="section-desc">Handcrafted in small sun-cured batches with pure cold-pressed mustard oil and single-origin Indian spices.</p>
+    </div>
+
+    <!-- Filter & Sort Bar -->
+    <div class="catalog-filter-bar">
+      <div class="filter-group" id="collection-filters">
+        <button type="button" class="filter-pill active" data-filter="all">All Jars (5)</button>
+        <button type="button" class="filter-pill" data-filter="heritage">Heritage Collection</button>
+        <button type="button" class="filter-pill" data-filter="studio">Studio Collection</button>
+        <button type="button" class="filter-pill" data-filter="bundle">Gift Boxes & Bundles</button>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 10px; font-size: 13px;">
+        <label for="catalog-sort" style="font-weight: 600;">Sort By:</label>
+        <select id="catalog-sort" style="padding: 6px 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: inherit; font-size: 13px; background: #FFF;">
+          <option value="featured">Featured & Bestselling</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="heat-desc">Spice Level: Fiery First</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="product-grid" id="catalog-grid">
+      <!-- Item 1: Classic Kairi -->
+      <div class="product-card" data-category="heritage" data-price="16.00" data-heat="3">
+        <div class="product-card-img-wrap">
+          <span class="product-tag heritage">Heritage Collection</span>
+          <a href="product.html"><img src="images/classic_kairi.jpg" alt="The Classic Kairi Mango Achar"></a>
+        </div>
+        <div class="product-card-body">
+          <div class="product-spice-rating">
+            <span class="spice-flames">🔥🔥🔥</span>
+            <span style="color: #888; font-size: 12px;">Medium Heat (12k SHU)</span>
+          </div>
+          <h3 class="product-card-title"><a href="product.html">The Classic Kairi</a></h3>
+          <p class="product-card-desc">The undisputed king of Punjabi achar. Tart raw green mango steeped in mustard oil, fenugreek, and fennel.</p>
+          <div class="product-card-footer">
+            <div class="product-card-price">$16.00 <span class="currency">CAD</span></div>
+            <button type="button" class="btn btn-primary btn-small" onclick="addToCart('classic-kairi')">+ Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Andhra Fire -->
+      <div class="product-card" data-category="heritage" data-price="16.00" data-heat="4">
+        <div class="product-card-img-wrap">
+          <span class="product-tag heritage">Heritage Collection</span>
+          <a href="product.html"><img src="images/andhra_fire.jpg" alt="Andhra Fire Spicy Tomato Garlic Achar"></a>
+        </div>
+        <div class="product-card-body">
+          <div class="product-spice-rating">
+            <span class="spice-flames">🔥🔥🔥🔥</span>
+            <span style="color: #888; font-size: 12px;">Fiery Heat (25k SHU)</span>
+          </div>
+          <h3 class="product-card-title"><a href="product.html">Andhra Fire</a></h3>
+          <p class="product-card-desc">Slow-simmered vine tomatoes, roasted garlic cloves, Guntur chillies, and crackling curry leaves in gingelly oil.</p>
+          <div class="product-card-footer">
+            <div class="product-card-price">$16.00 <span class="currency">CAD</span></div>
+            <button type="button" class="btn btn-primary btn-small" onclick="addToCart('andhra-fire')">+ Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Hot Honey Mango -->
+      <div class="product-card" data-category="studio" data-price="17.50" data-heat="3">
+        <div class="product-card-img-wrap">
+          <span class="product-tag studio">Studio Collection</span>
+          <a href="product.html"><img src="images/hot_honey_mango.jpg" alt="Hot Honey Mango Fusion Pickle"></a>
+        </div>
+        <div class="product-card-body">
+          <div class="product-spice-rating">
+            <span class="spice-flames">🔥🔥🔥</span>
+            <span style="color: #888; font-size: 12px;">Sweet & Fiery (18k SHU)</span>
+          </div>
+          <h3 class="product-card-title"><a href="product.html">Hot Honey Mango</a></h3>
+          <p class="product-card-desc">Raw green mango meets wildflower honey and Bhut Jolokia ghost pepper. Built for pizza, fried chicken & cheese boards.</p>
+          <div class="product-card-footer">
+            <div class="product-card-price">$17.50 <span class="currency">CAD</span></div>
+            <button type="button" class="btn btn-rani btn-small" onclick="addToCart('hot-honey-mango')">+ Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Smoked Garlic & Chilli -->
+      <div class="product-card" data-category="studio" data-price="17.50" data-heat="4">
+        <div class="product-card-img-wrap">
+          <span class="product-tag studio">Studio Collection</span>
+          <a href="product.html"><img src="images/smoked_garlic.jpg" alt="Smoked Garlic & Chilli Crisp Condiment"></a>
+        </div>
+        <div class="product-card-body">
+          <div class="product-spice-rating">
+            <span class="spice-flames">🔥🔥🔥🔥</span>
+            <span style="color: #888; font-size: 12px;">Crispy Umami (22k SHU)</span>
+          </div>
+          <h3 class="product-card-title"><a href="product.html">Smoked Garlic & Chilli</a></h3>
+          <p class="product-card-desc">The Indian chili crisp. Whole roasted garlic cloves, smoked Kashmiri chillies, and sesame crunch in infused oil.</p>
+          <div class="product-card-footer">
+            <div class="product-card-price">$17.50 <span class="currency">CAD</span></div>
+            <button type="button" class="btn btn-rani btn-small" onclick="addToCart('smoked-garlic')">+ Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5: The Tasting Box -->
+      <div class="product-card" data-category="bundle" data-price="39.00" data-heat="3">
+        <div class="product-card-img-wrap">
+          <span class="product-tag heritage">Gift Set • Save 18%</span>
+          <a href="index.html#bundle-builder"><img src="images/tasting_box.jpg" alt="The Kairi Tasting Box"></a>
+        </div>
+        <div class="product-card-body">
+          <div class="product-spice-rating">
+            <span class="spice-flames">🔥🔥🔥</span>
+            <span style="color: #888; font-size: 12px;">Curated Variety</span>
+          </div>
+          <h3 class="product-card-title"><a href="index.html#bundle-builder">The Kairi Tasting Box</a></h3>
+          <p class="product-card-desc">3 full-size jars in an embossed presentation box with a complimentary handcrafted hammered brass tasting spoon.</p>
+          <div class="product-card-footer">
+            <div class="product-card-price">$39.00 <span class="currency">CAD</span></div>
+            <button type="button" class="btn btn-primary btn-small" onclick="addToCart('tasting-box')">+ Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">KAIRI & CO.</div>
+        <p style="max-width: 320px; line-height: 1.6; margin-bottom: 16px;">
+          The Indian Condiment. Reimagined. Handcrafted small-batch achar honoring heritage recipes with single-origin spices and cold-pressed oils.
+        </p>
+        <p style="font-size: 13px; color: #888;">🍁 Proudly packaged & distributed across Canada from our Toronto hub.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">Shop All</a></li>
+          <li><a href="product.html">The Classic Kairi</a></li>
+          <li><a href="shop.html?cat=heritage">The Heritage Collection</a></li>
+          <li><a href="shop.html?cat=studio">The Studio Collection</a></li>
+          <li><a href="index.html#bundle-builder">Build a Tasting Box</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="story.html#sourcing">Spice Sourcing</a></li>
+          <li><a href="index.html#recipes">Pairing Recipes</a></li>
+          <li><a href="story.html#faq">Wholesale Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Help & Care</h4>
+        <ul>
+          <li><a href="product.html#shipping">Shipping & Returns</a></li>
+          <li><a href="product.html#storage">Storage & Freshness</a></li>
+          <li><a href="story.html#contact">Contact Care Team</a></li>
+          <li><a href="#">Privacy & Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Kairi & Co. Canada. All Rights Reserved.</div>
+      <div class="payment-badges">
+        <span>🔒 256-Bit SSL Encrypted Checkout</span>
+        <span>• Apple Pay</span>
+        <span>• Shop Pay</span>
+        <span>• Visa</span>
+        <span>• Mastercard</span>
+        <span>• Interac</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Cart Drawer -->
+  <div id="cart-overlay" class="cart-drawer-overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3>Your Pantry Cart (<span class="cart-badge">0</span>)</h3>
+      <button id="close-cart-btn" class="close-drawer-btn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress Bar -->
+    <div class="cart-shipping-bar">
+      <div class="shipping-bar-text" id="shipping-msg">
+        Add <strong>$50.00 CAD</strong> to unlock <strong>Free Canadian Shipping</strong>!
+      </div>
+      <div class="shipping-progress-track">
+        <div id="shipping-fill" class="shipping-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Container -->
+    <div class="cart-drawer-body" id="cart-drawer-items">
+      <!-- Injected via app.js -->
+    </div>
+
+    <!-- In-Cart 1-Click Upsell -->
+    <div style="padding: 0 24px 14px 24px;">
+      <div class="cart-upsell-module">
+        <img src="images/tasting_box.jpg" alt="Handcrafted Brass Tasting Spoon">
+        <div class="cart-upsell-text">
+          <h5>Handcrafted Brass Spoon</h5>
+          <p>Hammered brass scoop for your jars.</p>
+        </div>
+        <button class="btn btn-secondary btn-small" onclick="addCartUpsell('tasting-spoon')">+ $5.00</button>
+      </div>
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span>Taxes & Shipping:</span>
+        <span>Calculated at checkout</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal">$0.00 CAD</span>
+      </div>
+
+      <div class="accelerated-checkout">
+        <button class="btn-shop-pay" onclick="launchCheckoutModal('Shop Pay')">Shop Pay</button>
+        <button class="btn-apple-pay" onclick="launchCheckoutModal('Apple Pay')"> Pay</button>
+      </div>
+
+      <button class="btn btn-primary btn-block" onclick="launchCheckoutModal('Standard Checkout')">
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Simulated Checkout Modal -->
+  <div id="checkout-modal" class="modal-overlay">
+    <div class="modal-box" id="checkout-modal-body">
+      <button class="modal-close-btn" onclick="closeModal('checkout-modal')">&times;</button>
+      <span class="section-eyebrow">EXPRESS CHECKOUT FLOW</span>
+      <h3 style="font-size: 24px; margin: 8px 0 16px 0; font-family: var(--font-heading);">Confirm Your Order</h3>
+      <div id="checkout-modal-summary"></div>
+      <button class="btn btn-primary btn-block" onclick="completeSimulatedOrder()">
+        Place Order Now
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay"></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <span class="mobile-nav-brand">KAIRI & CO.</span>
+      <button id="mobile-nav-close" class="close-drawer-btn" aria-label="Close navigation">&times;</button>
+    </div>
+    <div class="mobile-nav-body">
+      <nav class="mobile-nav-list">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="shop.html" class="mobile-nav-link active">Shop All</a>
+        <a href="product.html" class="mobile-nav-link">The Classic Kairi</a>
+        <a href="index.html#bundle-builder" class="mobile-nav-link">Build a Box (Save 18%)</a>
+        <a href="story.html" class="mobile-nav-link">Our Story & Craft</a>
+        <a href="index.html#recipes" class="mobile-nav-link">Pairings & Recipes</a>
+        <a href="index.html#taste-quiz" class="mobile-nav-link">Find Your Achar Quiz</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <div class="mobile-nav-badge">🇨🇦 Handcrafted in Canada</div>
+        <p class="mobile-nav-subtext">Free Express Shipping across Canada on orders over $50 CAD</p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+  <script>
+    // Catalog Filtering and Sorting
+    const pills = document.querySelectorAll('.filter-pill');
+    const cards = document.querySelectorAll('#catalog-grid .product-card');
+    const sortSelect = document.getElementById('catalog-sort');
+
+    // Parse URL param if any (e.g. ?cat=heritage)
+    const urlParams = new URLSearchParams(window.location.search);
+    const catParam = urlParams.get('cat');
+    if (catParam) {
+      applyFilter(catParam);
+    }
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        applyFilter(pill.getAttribute('data-filter'));
+      });
+    });
+
+    function applyFilter(filter) {
+      pills.forEach(p => p.classList.toggle('active', p.getAttribute('data-filter') === filter));
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (filter === 'all' || cardCat === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    if (sortSelect) {
+      sortSelect.addEventListener('change', () => {
+        const grid = document.getElementById('catalog-grid');
+        const cardArray = Array.from(cards);
+        const sortVal = sortSelect.value;
+
+        if (sortVal === 'price-asc') {
+          cardArray.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+        } else if (sortVal === 'price-desc') {
+          cardArray.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+        } else if (sortVal === 'heat-desc') {
+          cardArray.sort((a, b) => parseInt(b.dataset.heat) - parseInt(a.dataset.heat));
+        }
+
+        cardArray.forEach(c => grid.appendChild(c));
+      });
+    }
+  </script>
+</body>
+</html>

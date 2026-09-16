@@ -1,0 +1,18 @@
+{
+  "name": "zapier_webhook_simulator",
+  "description": "Simulates triggering a Zapier or Make.com incoming webhook to test payload formats before live deployment.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "webhook_url": {
+        "type": "string",
+        "description": "The destination webhook URL (can be a mock local endpoint for testing)"
+      },
+      "json_payload": {
+        "type": "string",
+        "description": "The data payload representing the operational event (e.g., QA Passed, Document Uploaded)"
+      }
+    },
+    "required": ["webhook_url", "json_payload"]
+  }
+}

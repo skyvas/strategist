@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>The Classic Kairi | Premium Spicy Mango Achar | Kairi & Co.</title>
+  <meta name="description" content="Order The Classic Kairi handcrafted Punjabi raw mango pickle. Sun-cured with cold-pressed mustard oil, fenugreek, and fennel seeds. Shipped across Canada.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>🇨🇦 FREE EXPRESS SHIPPING ACROSS CANADA ON ORDERS OVER $50 CAD</span>
+    <span class="badge-cad">CAD $ (Canada)</span>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">KAIRI & CO.</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop All</a>
+        <a href="index.html#collections">Collections</a>
+        <a href="index.html#bundle-builder">Build a Box</a>
+        <a href="story.html">Our Story</a>
+        <a href="index.html#recipes">Recipes</a>
+      </nav>
+      <div class="header-actions">
+        <a href="shop.html" class="header-btn" title="Search Catalog">🔍 Search</a>
+        <button id="cart-icon-btn" class="header-btn cart-btn">
+          Cart <span class="cart-badge">0</span>
+        </button>
+        <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="pdp-container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &gt; 
+      <a href="shop.html?cat=heritage">Heritage Collection</a> &gt; 
+      <span>The Classic Kairi</span>
+    </nav>
+
+    <div class="pdp-grid">
+      <!-- Image Gallery Column -->
+      <div class="pdp-gallery">
+        <div class="pdp-main-image">
+          <img id="pdp-main-img" src="images/classic_kairi.jpg" alt="The Classic Kairi Mango Achar Jar with Brass Tasting Spoon">
+        </div>
+        <div class="pdp-thumbnails">
+          <div class="pdp-thumb-item active" data-img="images/classic_kairi.jpg">
+            <img src="images/classic_kairi.jpg" alt="Jar & Tasting Spoon">
+          </div>
+          <div class="pdp-thumb-item" data-img="images/hero_banner.jpg">
+            <img src="images/hero_banner.jpg" alt="Spices and Lineup">
+          </div>
+          <div class="pdp-thumb-item" data-img="images/grilled_cheese.jpg">
+            <img src="images/grilled_cheese.jpg" alt="Grilled Cheese Pairing">
+          </div>
+          <div class="pdp-thumb-item" data-img="images/avocado_toast.jpg">
+            <img src="images/avocado_toast.jpg" alt="Avocado Toast Pairing">
+          </div>
+          <div class="pdp-thumb-item" data-img="images/tasting_box.jpg">
+            <img src="images/tasting_box.jpg" alt="Tasting Box Set">
+          </div>
+        </div>
+      </div>
+
+      <!-- Buy Box Column -->
+      <div class="pdp-buy-box">
+        <span class="pdp-badge-collection">Heritage Collection • Small-Batch Batch #12</span>
+        <h1 class="pdp-title">The Classic Kairi: Premium Spicy Mango Achar</h1>
+        
+        <div class="pdp-rating-row">
+          <span class="stars">★★★★★</span>
+          <strong>4.9 / 5.0</strong>
+          <span style="color: #777;">(1,245 Verified Reviews)</span>
+          <span style="background: #FEF3C7; color: #D97706; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;">#1 BESTSELLER</span>
+        </div>
+
+        <div class="pdp-price-row">
+          <span class="pdp-price" id="pdp-price-display">$16.00 CAD</span>
+          <span class="pdp-price-compare">$19.00 CAD</span>
+          <span class="pdp-discount-pill">16% OFF</span>
+        </div>
+
+        <p class="pdp-short-desc">
+          A love letter to the quintessential Punjabi-style raw mango pickle. Crisp hand-cut green mangoes steeped in cold-pressed mustard oil, aromatic fennel seeds, bitter-sweet fenugreek, and tart sun-cured spices. Vibrant, tangy, and deeply nostalgic.
+        </p>
+
+        <!-- Spice Meter -->
+        <div class="pdp-spice-box">
+          <div>
+            <div class="pdp-spice-label">Spice Level: Medium Kick</div>
+            <div class="pdp-spice-scoville">~12,000 Scoville Heat Units (SHU)</div>
+          </div>
+          <div class="pdp-spice-meter">
+            <span class="flames">🔥🔥🔥</span>
+            <span style="font-size: 13px; font-weight: 700; color: #D97706;">3 / 5</span>
+          </div>
+        </div>
+
+        <!-- Purchase Type Toggle -->
+        <div class="purchase-options-box">
+          <label class="purchase-option selected" id="opt-onetime" onclick="selectPurchaseOption('onetime')">
+            <div class="purchase-option-left">
+              <input type="radio" name="purchase_type" value="onetime" checked>
+              <div>
+                <div class="purchase-option-title">One-Time Purchase</div>
+                <div class="purchase-option-desc">Single jar delivery</div>
+              </div>
+            </div>
+            <strong>$16.00 CAD</strong>
+          </label>
+
+          <label class="purchase-option" id="opt-sub" onclick="selectPurchaseOption('sub')">
+            <div class="purchase-option-left">
+              <input type="radio" name="purchase_type" value="sub">
+              <div>
+                <div class="purchase-option-title">Subscribe & Save 15%</div>
+                <div class="purchase-option-desc">Auto-delivered every 30 days • Cancel anytime</div>
+              </div>
+            </div>
+            <strong style="color: #15803D;">$13.60 CAD</strong>
+          </label>
+        </div>
+
+        <!-- Pack Selection -->
+        <div>
+          <span class="pack-selector-label">Select Bundle & Save:</span>
+          <div class="pack-options">
+            <div class="pack-btn selected" data-pack="1" data-price="16.00">
+              <div class="pack-btn-title">1 Jar</div>
+              <div class="pack-btn-price">$16.00</div>
+              <div style="font-size: 11px; color: #888;">Standard</div>
+            </div>
+            <div class="pack-btn" data-pack="3" data-price="42.00">
+              <div class="pack-btn-title">3-Pack</div>
+              <div class="pack-btn-price">$42.00</div>
+              <div class="pack-btn-save">Save $6.00</div>
+            </div>
+            <div class="pack-btn" data-pack="6" data-price="78.00">
+              <div class="pack-btn-title">6-Pack Case</div>
+              <div class="pack-btn-price">$78.00</div>
+              <div class="pack-btn-save">Save $18 + Free Ship</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Row -->
+        <div class="pdp-action-row">
+          <div class="pdp-qty-stepper">
+            <button type="button" onclick="changePdpQty(-1)" aria-label="Decrease quantity">−</button>
+            <span id="pdp-qty-val">1</span>
+            <button type="button" onclick="changePdpQty(1)" aria-label="Increase quantity">+</button>
+          </div>
+          <button type="button" class="btn btn-primary pdp-add-btn" id="main-add-to-cart-btn" onclick="handlePdpAddToCart()">
+            Add to Cart • $16.00 CAD
+          </button>
+        </div>
+
+        <!-- Accelerated Checkout -->
+        <button type="button" class="btn btn-block btn-shop-pay" style="height: 48px; margin-bottom: 24px;" onclick="launchCheckoutModal('Shop Pay Instant')">
+          Buy with Shop Pay
+        </button>
+
+        <!-- Trust Features -->
+        <div style="font-size: 13px; color: #555; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px; background: #FFF; border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+          <div>✓ Dispatched from Toronto in 24h</div>
+          <div>✓ Free shipping over $50 CAD</div>
+          <div>✓ Heavy glass jar with seal lid</div>
+          <div>✓ 100% Canadian Freshness Guarantee</div>
+        </div>
+
+        <!-- Deep Accordions -->
+        <div class="pdp-accordions">
+          <!-- Accordion 1 -->
+          <div class="pdp-accordion-item open">
+            <div class="pdp-accordion-header">
+              <span>Ingredients & Allergen Info</span>
+              <span class="pdp-accordion-icon">+</span>
+            </div>
+            <div class="pdp-accordion-content">
+              <p><strong>Ingredients:</strong> Hand-cut Green Mango (65%), Cold-Pressed Pure Mustard Oil, Iodized Salt, Red Chilli Powder, Fenugreek Seeds (Methi), Fennel Seeds (Saunf), Nigella Seeds (Kalonji), Turmeric Powder, Asafoetida (Hing), Whole Spices.</p>
+              <p style="margin-top: 8px;"><strong>Allergens:</strong> Contains Mustard. Free from artificial preservatives, MSG, synthetic food colors, or added corn syrups. 100% Plant-Based & Naturally Gluten-Free.</p>
+            </div>
+          </div>
+
+          <!-- Accordion 2 -->
+          <div class="pdp-accordion-item">
+            <div class="pdp-accordion-header">
+              <span>The Traditional Craft & Sun-Curing</span>
+              <span class="pdp-accordion-icon">+</span>
+            </div>
+            <div class="pdp-accordion-content">
+              <p>Unlike commercial supermarket pickles that are quick-boiled with acetic acid, Kairi & Co. follows the ancient *Dhoop Vidhi* (sun-curing). The freshly cut raw green mangoes are salted and sun-cured in traditional ceramic barnis under natural warmth for 21 days.</p>
+              <p style="margin-top: 8px;">This allows the natural probiotic lactobacillus cultures to develop, softening the mango skins while preserving a vibrant crunch, fully infused with cold-pressed mustard oil.</p>
+            </div>
+          </div>
+
+          <!-- Accordion 3 -->
+          <div class="pdp-accordion-item">
+            <div class="pdp-accordion-header">
+              <span>Pairing Suggestions & Kitchen Ideas</span>
+              <span class="pdp-accordion-icon">+</span>
+            </div>
+            <div class="pdp-accordion-content">
+              <p><strong>Traditional:</strong> Essential alongside hot aloo parathas with homemade butter, dal tadka with steamed basmati, or yellow moong khichdi.</p>
+              <p style="margin-top: 8px;"><strong>Modern Reimagined:</strong> Smear inside a gourmet sourdough grilled cheese, dollop over morning avocado toast with runny eggs, or mix into Greek yogurt for a smoky-spicy fry dip.</p>
+            </div>
+          </div>
+
+          <!-- Accordion 4 -->
+          <div class="pdp-accordion-item">
+            <div class="pdp-accordion-header">
+              <span>Shipping, Storage & Shelf Life</span>
+              <span class="pdp-accordion-icon">+</span>
+            </div>
+            <div class="pdp-accordion-content">
+              <p><strong>Canadian Shipping:</strong> All orders are carefully packed in recyclable molded pulp cushioning and dispatched from our Toronto warehouse via Canada Post Expedited Parcel (2-4 business days). Orders over $50 CAD ship FREE.</p>
+              <p style="margin-top: 8px;"><strong>Shelf Life:</strong> 18 months unopened. Once opened, always use a clean, dry spoon. Ensure mango pieces remain submerged under the natural spice oil layer. Store in a cool pantry or refrigerate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verified Reviews Breakdown Section -->
+    <section class="section" style="padding-top: 60px;">
+      <div class="section-header">
+        <span class="section-eyebrow">Customer Community</span>
+        <h2 class="section-title">Verified Customer Reviews</h2>
+        <p class="section-desc">Over 1,245 five-star reviews from achar lovers across Canada.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">"This is real achar. Nothing like the mass-market salty stuff."</div>
+          <p class="review-text">The balance of raw mango tartness and roasted fenugreek is spot on. The mustard oil gives it that authentic punch without being greasy. Will be buying the 6-pack next time.</p>
+          <div class="review-author">
+            <span>Harpreet B. • Mississauga, ON</span>
+            <span class="verified-badge">✓ Verified Buyer</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">"Took our weekend grilled cheese to another planet."</div>
+          <p class="review-text">Heard about this brand through Eater Toronto. Spread a spoonful inside a cheddar and sourdough sandwich. The crisp texture of the mango pieces is extraordinary.</p>
+          <div class="review-author">
+            <span>Liam K. • Toronto, ON</span>
+            <span class="verified-badge">✓ Verified Buyer</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">"Reminds me of my Nani's kitchen in Amritsar."</div>
+          <p class="review-text">I have searched Canada for 10 years for a mango achar that tastes like home. This is it. Thank you for doing this right and not cutting corners on ingredients.</p>
+          <div class="review-author">
+            <span>Navneet S. • Calgary, AB</span>
+            <span class="verified-badge">✓ Verified Buyer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Complete Your Flavor Pantry (Cross-Sells) -->
+    <section class="section" style="padding-top: 20px;">
+      <div class="section-header">
+        <span class="section-eyebrow">Complete The Pantry</span>
+        <h2 class="section-title">Frequently Paired Together</h2>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-card-img-wrap">
+            <span class="product-tag heritage">Heritage Collection</span>
+            <img src="images/andhra_fire.jpg" alt="Andhra Fire">
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">Andhra Fire</h3>
+            <p class="product-card-desc">Spicy tomato, roasted garlic cloves, and curry leaf relish.</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">$16.00 CAD</div>
+              <button type="button" class="btn btn-primary btn-small" onclick="addToCart('andhra-fire')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-img-wrap">
+            <span class="product-tag studio">Studio Collection</span>
+            <img src="images/smoked_garlic.jpg" alt="Smoked Garlic & Chilli">
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">Smoked Garlic & Chilli</h3>
+            <p class="product-card-desc">The Indian chili crisp with crunchy garlic and Kashmiri pepper.</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">$17.50 CAD</div>
+              <button type="button" class="btn btn-rani btn-small" onclick="addToCart('smoked-garlic')">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-img-wrap">
+            <span class="product-tag heritage">Curated Gift Box</span>
+            <img src="images/tasting_box.jpg" alt="The Tasting Box">
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">The Kairi Tasting Box</h3>
+            <p class="product-card-desc">3 full-size jars + complimentary hand-hammered brass spoon.</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">$39.00 CAD</div>
+              <button type="button" class="btn btn-primary btn-small" onclick="addToCart('tasting-box')">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky Buy Bar -->
+  <div id="sticky-buy-bar" class="sticky-buy-bar">
+    <div class="sticky-buy-container">
+      <div class="sticky-product-info">
+        <img src="images/classic_kairi.jpg" alt="The Classic Kairi">
+        <div>
+          <div class="sticky-title">The Classic Kairi: Premium Spicy Mango Achar</div>
+          <div class="sticky-price" id="sticky-price-display">$16.00 CAD • Heritage Collection</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="handlePdpAddToCart()">
+        Add to Cart • <span id="sticky-btn-price">$16.00 CAD</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">KAIRI & CO.</div>
+        <p style="max-width: 320px; line-height: 1.6; margin-bottom: 16px;">
+          The Indian Condiment. Reimagined. Handcrafted small-batch achar honoring heritage recipes with single-origin spices and cold-pressed oils.
+        </p>
+        <p style="font-size: 13px; color: #888;">🍁 Proudly packaged & distributed across Canada from our Toronto hub.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">Shop All</a></li>
+          <li><a href="product.html">The Classic Kairi</a></li>
+          <li><a href="shop.html?cat=heritage">The Heritage Collection</a></li>
+          <li><a href="shop.html?cat=studio">The Studio Collection</a></li>
+          <li><a href="index.html#bundle-builder">Build a Tasting Box</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="story.html#sourcing">Spice Sourcing</a></li>
+          <li><a href="index.html#recipes">Pairing Recipes</a></li>
+          <li><a href="story.html#faq">Wholesale Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Help & Care</h4>
+        <ul>
+          <li><a href="#shipping">Shipping & Returns</a></li>
+          <li><a href="#storage">Storage & Freshness</a></li>
+          <li><a href="story.html#contact">Contact Care Team</a></li>
+          <li><a href="#">Privacy & Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Kairi & Co. Canada. All Rights Reserved.</div>
+      <div class="payment-badges">
+        <span>🔒 256-Bit SSL Encrypted Checkout</span>
+        <span>• Apple Pay</span>
+        <span>• Shop Pay</span>
+        <span>• Visa</span>
+        <span>• Mastercard</span>
+        <span>• Interac</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Cart Drawer -->
+  <div id="cart-overlay" class="cart-drawer-overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3>Your Pantry Cart (<span class="cart-badge">0</span>)</h3>
+      <button id="close-cart-btn" class="close-drawer-btn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress Bar -->
+    <div class="cart-shipping-bar">
+      <div class="shipping-bar-text" id="shipping-msg">
+        Add <strong>$50.00 CAD</strong> to unlock <strong>Free Canadian Shipping</strong>!
+      </div>
+      <div class="shipping-progress-track">
+        <div id="shipping-fill" class="shipping-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Container -->
+    <div class="cart-drawer-body" id="cart-drawer-items">
+      <!-- Injected via app.js -->
+    </div>
+
+    <!-- In-Cart 1-Click Upsell -->
+    <div style="padding: 0 24px 14px 24px;">
+      <div class="cart-upsell-module">
+        <img src="images/tasting_box.jpg" alt="Handcrafted Brass Tasting Spoon">
+        <div class="cart-upsell-text">
+          <h5>Handcrafted Brass Spoon</h5>
+          <p>Hammered brass scoop for your jars.</p>
+        </div>
+        <button class="btn btn-secondary btn-small" onclick="addCartUpsell('tasting-spoon')">+ $5.00</button>
+      </div>
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span>Taxes & Shipping:</span>
+        <span>Calculated at checkout</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal">$0.00 CAD</span>
+      </div>
+
+      <div class="accelerated-checkout">
+        <button class="btn-shop-pay" onclick="launchCheckoutModal('Shop Pay')">Shop Pay</button>
+        <button class="btn-apple-pay" onclick="launchCheckoutModal('Apple Pay')"> Pay</button>
+      </div>
+
+      <button class="btn btn-primary btn-block" onclick="launchCheckoutModal('Standard Checkout')">
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Simulated Checkout Modal -->
+  <div id="checkout-modal" class="modal-overlay">
+    <div class="modal-box" id="checkout-modal-body">
+      <button class="modal-close-btn" onclick="closeModal('checkout-modal')">&times;</button>
+      <span class="section-eyebrow">EXPRESS CHECKOUT FLOW</span>
+      <h3 style="font-size: 24px; margin: 8px 0 16px 0; font-family: var(--font-heading);">Confirm Your Order</h3>
+      <div id="checkout-modal-summary"></div>
+      <button class="btn btn-primary btn-block" onclick="completeSimulatedOrder()">
+        Place Order Now
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay"></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <span class="mobile-nav-brand">KAIRI & CO.</span>
+      <button id="mobile-nav-close" class="close-drawer-btn" aria-label="Close navigation">&times;</button>
+    </div>
+    <div class="mobile-nav-body">
+      <nav class="mobile-nav-list">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="shop.html" class="mobile-nav-link">Shop All</a>
+        <a href="product.html" class="mobile-nav-link active">The Classic Kairi</a>
+        <a href="index.html#bundle-builder" class="mobile-nav-link">Build a Box (Save 18%)</a>
+        <a href="story.html" class="mobile-nav-link">Our Story & Craft</a>
+        <a href="index.html#recipes" class="mobile-nav-link">Pairings & Recipes</a>
+        <a href="index.html#taste-quiz" class="mobile-nav-link">Find Your Achar Quiz</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <div class="mobile-nav-badge">🇨🇦 Handcrafted in Canada</div>
+        <p class="mobile-nav-subtext">Free Express Shipping across Canada on orders over $50 CAD</p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+  <script>
+    let pdpQty = 1;
+    let currentPack = '1';
+    let isSubscription = false;
+
+    function changePdpQty(delta) {
+      pdpQty = Math.max(1, pdpQty + delta);
+      document.getElementById('pdp-qty-val').textContent = pdpQty;
+      updatePdpPrice();
+    }
+
+    function selectPurchaseOption(type) {
+      isSubscription = (type === 'sub');
+      document.getElementById('opt-onetime').classList.toggle('selected', !isSubscription);
+      document.getElementById('opt-sub').classList.toggle('selected', isSubscription);
+      updatePdpPrice();
+    }
+
+    function updatePdpPrice() {
+      let basePrice = 16.00;
+      let variantName = 'Single Jar (350g)';
+      if (currentPack === '3') {
+        basePrice = 42.00;
+        variantName = '3-Pack Bundle';
+      } else if (currentPack === '6') {
+        basePrice = 78.00;
+        variantName = '6-Pack Case';
+      }
+
+      if (isSubscription) {
+        basePrice = basePrice * 0.85; // 15% off
+        variantName += ' (Monthly Subscription)';
+      }
+
+      const totalForQty = (basePrice * pdpQty).toFixed(2);
+      document.getElementById('pdp-price-display').textContent = `$${basePrice.toFixed(2)} CAD`;
+      document.getElementById('main-add-to-cart-btn').textContent = `Add to Cart • $${totalForQty} CAD`;
+      document.getElementById('sticky-btn-price').textContent = `$${totalForQty} CAD`;
+    }
+
+    // Attach pack selectors
+    document.querySelectorAll('.pack-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentPack = btn.getAttribute('data-pack');
+        updatePdpPrice();
+      });
+    });
+
+    function handlePdpAddToCart() {
+      let variantName = currentPack === '1' ? 'Single Jar (350g)' : (currentPack === '3' ? '3-Pack Bundle' : '6-Pack Case');
+      let basePrice = currentPack === '1' ? 16.00 : (currentPack === '3' ? 42.00 : 78.00);
+      if (isSubscription) {
+        basePrice = basePrice * 0.85;
+        variantName += ' (Subscription)';
+      }
+      addToCart('classic-kairi', pdpQty, variantName, basePrice);
+    }
+  </script>
+</body>
+</html>

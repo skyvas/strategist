@@ -1,0 +1,22 @@
+{
+  "name": "shopify_admin_api_tools",
+  "description": "Interact with the Shopify Admin API to fetch variants, collections, and metafields.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "endpoint": {
+        "type": "string",
+        "description": "The Shopify Admin API REST endpoint (e.g., /admin/api/2023-10/products.json)"
+      },
+      "method": {
+        "type": "string",
+        "description": "HTTP Method (GET, POST, PUT, DELETE)"
+      },
+      "payload": {
+        "type": "string",
+        "description": "JSON payload for POST/PUT requests"
+      }
+    },
+    "required": ["endpoint", "method"]
+  }
+}

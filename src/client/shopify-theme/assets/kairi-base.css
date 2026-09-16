@@ -1,0 +1,81 @@
+:root {
+  --color-bg: #FDFBF7;
+  --color-text: #1A1A1A;
+  --color-accent-marigold: #E59E2B;
+  --color-accent-rani: #E03178;
+  
+  --font-heading: 'Editorial New', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-marigold);
+  color: var(--color-bg);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Slide Out Cart */
+.slide-out-cart {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-out-cart[aria-hidden="false"] {
+  right: 0;
+}
+
+.cart-progress-bar progress {
+  width: 100%;
+  height: 8px;
+  appearance: none;
+}
+
+.cart-progress-bar progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.cart-progress-bar progress::-webkit-progress-value {
+  background-color: var(--color-accent-marigold);
+  border-radius: 4px;
+}
+
+.spice-meter .icon-flame {
+  font-size: 1.2rem;
+}

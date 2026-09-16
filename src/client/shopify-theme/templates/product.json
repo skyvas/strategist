@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title"
+        },
+        "price": {
+          "type": "price"
+        },
+        "buy_box": {
+          "type": "product-buy-box"
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "buy_box"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

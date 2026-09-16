@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "colors_background_1",
+        "label": "Primary Background",
+        "default": "#FDFBF7"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_1",
+        "label": "Primary Accent (Marigold)",
+        "default": "#E59E2B"
+      },
+      {
+        "type": "color",
+        "id": "colors_text",
+        "label": "Text",
+        "default": "#1A1A1A"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "label": "Heading font",
+        "default": "serif"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "label": "Body font",
+        "default": "sans-serif"
+      }
+    ]
+  }
+]

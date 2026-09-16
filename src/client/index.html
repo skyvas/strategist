@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bistro 15 | Live Table Waitlist & Management</title>
+  <meta name="description" content="Real-time live queue and table seating management system for Bistro 15.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Global Toast Alert Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Header & Top Navigation -->
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-logo">B15</div>
+      <div class="brand-text">
+        <h1>Bistro 15</h1>
+        <span class="tagline">15-Table Dining Room & Live Queue</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div id="connection-badge" class="badge badge-connected" title="Real-time stream connected">
+        <span class="pulse-dot"></span> Live
+      </div>
+      <button id="view-toggle-btn" class="btn btn-outline" onclick="toggleView()">
+        Host Station
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+    
+    <!-- ================================================================ -->
+    <!-- GUEST VIEW: Self-Service QR Ingress & Live Tracker -->
+    <!-- ================================================================ -->
+    <section id="guest-view" class="view-panel active">
+      
+      <!-- Check-In Ingress Form (Shown if no active ticket in session) -->
+      <div id="ingress-card" class="card ingress-card">
+        <div class="card-header">
+          <h2>Join the Waitlist</h2>
+          <p class="subtitle">Skip the crowded entrance. Get notified on your phone when your table is ready.</p>
+        </div>
+
+        <form id="waitlist-form" onsubmit="handleJoinQueue(event)">
+          <div class="form-group">
+            <label for="guest-name">Your Name</label>
+            <input type="text" id="guest-name" name="guest_name" placeholder="e.g., Alex Johnson" required autocomplete="name">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="party-size">Party Size</label>
+              <select id="party-size" name="party_size" required>
+                <option value="1">1 Person</option>
+                <option value="2" selected>2 People (2-Top)</option>
+                <option value="3">3 People (4-Top)</option>
+                <option value="4">4 People (4-Top)</option>
+                <option value="5">5 People (6-Top)</option>
+                <option value="6">6 People (6-Top)</option>
+                <option value="7">7+ People</option>
+              </select>
+            </div>
+            <div class="form-group flex-2">
+              <label for="phone-number">Mobile Number</label>
+              <input type="tel" id="phone-number" name="phone_number" placeholder="e.g., 555-0199" required autocomplete="tel">
+            </div>
+          </div>
+
+          <button type="submit" id="join-queue-btn" class="btn btn-primary btn-block">
+            Get In Line Now
+          </button>
+        </form>
+
+        <div class="ingress-footer">
+          <span>⚡ Live updates powered by real-time stream. You are free to explore nearby.</span>
+        </div>
+      </div>
+
+      <!-- Live Ticket Tracker (Shown when active ticket exists) -->
+      <div id="tracker-card" class="card tracker-card hidden">
+        <div class="tracker-banner" id="tracker-banner">
+          <span class="badge" id="tracker-status-badge">WAITING</span>
+          <span class="ticket-uuid" id="tracker-ticket-id">#TICKET</span>
+        </div>
+
+        <!-- Table Called High-Impact Hero Banner -->
+        <div id="called-hero-alert" class="called-hero-alert hidden">
+          <div class="alert-icon">🎉</div>
+          <h3>Your Table is Ready!</h3>
+          <p>Please report to the Host Stand immediately.</p>
+          <div class="table-assigned-callout" id="called-table-label">Table #--</div>
+          
+          <!-- 10-Minute Grace Period Timer -->
+          <div class="grace-countdown-box">
+            <div class="countdown-label">Table Hold Grace Window:</div>
+            <div class="countdown-digits" id="grace-digits">10:00</div>
+            <div class="countdown-bar">
+              <div class="countdown-bar-fill" id="grace-bar-fill" style="width: 100%;"></div>
+            </div>
+            <div class="countdown-hint" id="grace-hint">Second reminder alerts at 3:00 remaining.</div>
+          </div>
+        </div>
+
+        <div class="tracker-body">
+          <h3 id="tracker-guest-greeting">Welcome!</h3>
+          <p class="tracker-meta" id="tracker-party-meta">Party of --</p>
+
+          <!-- Queue Position Stats Grid -->
+          <div class="stats-grid" id="tracker-stats-grid">
+            <div class="stat-card">
+              <span class="stat-label">Queue Position</span>
+              <span class="stat-value highlight" id="tracker-position">--</span>
+              <span class="stat-sub">parties ahead of you</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Estimated Wait</span>
+              <span class="stat-value" id="tracker-est-wait">--</span>
+              <span class="stat-sub">minutes</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Live Activity / Lockscreen Mockup -->
+          <div class="live-activity-card">
+            <div class="activity-header">
+              <span class="activity-app">📱 iPhone / Android Live Activity</span>
+              <span class="activity-time">Now</span>
+            </div>
+            <div class="activity-content">
+              <div class="activity-left">
+                <strong id="activity-title">Bistro 15 Queue</strong>
+                <span id="activity-desc">Position #-- in line</span>
+              </div>
+              <div class="activity-right">
+                <span class="pill-badge" id="activity-badge">Waiting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tracker-actions">
+            <button class="btn btn-outline btn-sm" onclick="testAudioChime()">
+              🔔 Test Audio Chime
+            </button>
+            <button class="btn btn-danger btn-sm" onclick="handleLeaveQueue()">
+              Leave Waitlist
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- HOST VIEW: 15-Table Interactive Floor Station & Queue Controls -->
+    <!-- ================================================================ -->
+    <section id="host-view" class="view-panel">
+      
+      <!-- Host PIN Gate Modal / Card -->
+      <div id="host-auth-box" class="card host-auth-box">
+        <div class="card-header">
+          <h2>Host & Floor Station</h2>
+          <p class="subtitle">Enter Host PIN to access the 15-table floor map and seating controls.</p>
+        </div>
+        <div class="pin-input-group">
+          <input type="password" id="host-pin-input" placeholder="Enter Host PIN (Default: 1515)" maxlength="8">
+          <button id="host-login-btn" class="btn btn-primary" onclick="authenticateHost()">Unlock Station</button>
+        </div>
+      </div>
+
+      <!-- Authenticated Host Console -->
+      <div id="host-dashboard" class="host-dashboard hidden">
+        
+        <!-- Floor Status Overview Header -->
+        <div class="host-topbar">
+          <div class="floor-metrics">
+            <span class="metric-pill available"><span class="dot"></span> <b id="count-available">0</b> Available</span>
+            <span class="metric-pill called"><span class="dot"></span> <b id="count-called">0</b> Called</span>
+            <span class="metric-pill occupied"><span class="dot"></span> <b id="count-occupied">0</b> Occupied</span>
+            <span class="metric-pill dirty"><span class="dot"></span> <b id="count-dirty">0</b> Dirty</span>
+          </div>
+          <div class="host-controls">
+            <button class="btn btn-sm btn-outline" onclick="refreshHostData()">🔄 Refresh</button>
+            <button class="btn btn-sm btn-danger" onclick="logoutHost()">Lock</button>
+          </div>
+        </div>
+
+        <div class="host-layout">
+          <!-- 15-Table Floor Grid -->
+          <div class="floor-section">
+            <div class="section-title">
+              <h3>15-Table Dining Room</h3>
+              <span class="section-sub">Hard Capacity: 54 Seats Across 15 Tables</span>
+            </div>
+
+            <div class="tables-grid" id="tables-grid">
+              <!-- Tables 1 to 15 will be dynamically rendered here -->
+            </div>
+          </div>
+
+          <!-- Waiting Queue Sidebar -->
+          <div class="queue-section">
+            <div class="section-title">
+              <h3>Active Waitlist Queue</h3>
+              <span class="badge badge-neutral" id="queue-count-badge">0 Parties</span>
+            </div>
+
+            <div class="queue-list" id="host-queue-list">
+              <!-- Waiting parties dynamically rendered here -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Bistro 15 Autonomous Waitlist Engine • PostgreSQL & Wasmer Micro-Service • Zero Empty Buffer Architecture</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

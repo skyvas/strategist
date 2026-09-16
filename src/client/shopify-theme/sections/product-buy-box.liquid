@@ -1,0 +1,33 @@
+<div class="product-buy-box">
+  <form method="post" action="/cart/add">
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    
+    <div class="spice-meter">
+      <span class="label">Spice Level:</span>
+      {% assign spice_level = product.metafields.custom.spice_level | default: 0 %}
+      {% for i in (1..spice_level) %}
+        <span class="icon-flame">🔥</span>
+      {% endfor %}
+    </div>
+
+    {% if product.metafields.custom.perfect_pairings %}
+      <div class="pairings">
+        <strong>Perfect with:</strong> 
+        {{ product.metafields.custom.perfect_pairings | join: ', ' }}
+      </div>
+    {% endif %}
+
+    <div class="buy-buttons">
+      <button type="submit" class="btn btn-primary add-to-cart">Add to Cart - {{ product.price | money }}</button>
+      {{ form | payment_button }}
+    </div>
+  </form>
+</div>
+
+{% schema %}
+{
+  "name": "Product Buy Box",
+  "target": "section",
+  "settings": []
+}
+{% endschema %}

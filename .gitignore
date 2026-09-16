@@ -5,3 +5,7 @@ __pycache__/
 .venv/
 env/
 .playwright-mcp/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite3

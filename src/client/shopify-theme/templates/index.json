@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "hero": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/kairi-hero.jpg"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "The Heritage Collection"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_collection"
+  ]
+}

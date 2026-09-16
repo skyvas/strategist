@@ -1,0 +1,31 @@
+<div id="SlideOutCart" class="slide-out-cart" aria-hidden="true">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button class="close-cart" aria-label="Close cart">&times;</button>
+  </div>
+  
+  <div class="cart-progress-bar">
+    {% assign free_shipping_threshold = 5000 %} <!-- $50.00 -->
+    {% assign cart_total = cart.total_price %}
+    
+    {% if cart_total >= free_shipping_threshold %}
+      <p class="success">You've unlocked Free Shipping!</p>
+    {% else %}
+      {% assign amount_needed = free_shipping_threshold | minus: cart_total %}
+      <p>Add <strong>{{ amount_needed | money }}</strong> to get Free Shipping!</p>
+      <progress value="{{ cart_total }}" max="{{ free_shipping_threshold }}"></progress>
+    {% endif %}
+  </div>
+
+  <div class="cart-items">
+    <!-- Populated via AJAX -->
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-upsell">
+      <p>Add a Tasting Spoon?</p>
+      <button class="btn btn-secondary btn-small" data-variant-id="123456789">+ $5.00</button>
+    </div>
+    <a href="/checkout" class="btn btn-primary checkout-btn">Checkout</a>
+  </div>
+</div>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Kairi & Co. | The Indian Condiment. Reimagined.</title>
+  <meta name="description" content="Artisanal, small-batch Indian achar pickles and condiments handcrafted with cold-pressed mustard oil, sun-cured spices, and bold flavors for the modern Canadian pantry.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>🇨🇦 FREE EXPRESS SHIPPING ACROSS CANADA ON ORDERS OVER $50 CAD</span>
+    <span class="badge-cad">CAD $ (Canada)</span>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">KAIRI & CO.</a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="shop.html">Shop All</a>
+        <a href="#collections">Collections</a>
+        <a href="#bundle-builder">Build a Box</a>
+        <a href="story.html">Our Story</a>
+        <a href="#recipes">Recipes</a>
+      </nav>
+      <div class="header-actions">
+        <a href="shop.html" class="header-btn" title="Search Catalog">🔍 Search</a>
+        <button id="cart-icon-btn" class="header-btn cart-btn">
+          Cart <span class="cart-badge">0</span>
+        </button>
+        <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="hero-eyebrow">Artisanal Small-Batch Condiments</span>
+          <h1 class="hero-title">The Art of Authentic Indian Achar.</h1>
+          <p class="hero-subtitle">
+            Bold, deeply layered, and sun-cured. We honor traditional ceramic <em>barni</em> recipes with cold-pressed oils and single-origin Indian spices—reimagined for Canada's modern pantry.
+          </p>
+          <div class="hero-cta-group">
+            <a href="product.html" class="btn btn-primary">Shop The Classic Kairi</a>
+            <a href="#bundle-builder" class="btn btn-secondary">Build a 3-Pack Box (Save 18%)</a>
+          </div>
+          <div class="hero-badges">
+            <span>☀️ 100% Sun-Cured</span>
+            <span>🌿 Cold-Pressed Mustard Oil</span>
+            <span>🚫 Zero Preservatives</span>
+            <span>🇨🇦 Shipped from Toronto Hub</span>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="images/hero_banner.jpg" alt="Kairi & Co. artisanal achar lineup on rustic wooden counter with whole spices">
+          <div class="hero-floating-tag">
+            <span>★ 4.9/5 Rating</span> • Over 1,200+ Verified Canadian Foodies
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Press Mentions -->
+    <section class="press-section">
+      <div class="press-label">As Celebrated In</div>
+      <div class="press-logos">
+        <span class="press-item">Bon Appétit</span>
+        <span class="press-item">Toronto Life</span>
+        <span class="press-item">Eater</span>
+        <span class="press-item">Food & Wine</span>
+        <span class="press-item">The Globe and Mail</span>
+      </div>
+    </section>
+
+    <!-- Featured Pickles / Best Sellers -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-eyebrow">Small-Batch Batch Drops</span>
+        <h2 class="section-title">The Signature Lineup</h2>
+        <p class="section-desc">Handcrafted in small sun-cured batches. Once a seasonal batch runs out, it's gone until the next harvest.</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div class="product-card-img-wrap">
+            <span class="product-tag heritage">Heritage Collection</span>
+            <a href="product.html"><img src="images/classic_kairi.jpg" alt="The Classic Kairi Mango Achar"></a>
+          </div>
+          <div class="product-card-body">
+            <div class="product-spice-rating">
+              <span class="spice-flames">🔥🔥🔥</span>
+              <span style="color: #888; font-size: 12px;">Medium Heat (12k SHU)</span>
+            </div>
+            <h3 class="product-card-title"><a href="product.html">The Classic Kairi</a></h3>
+            <p class="product-card-desc">The undisputed king of Punjabi achar. Tart raw green mango steeped in mustard oil, fenugreek, and fennel.</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">$16.00 <span class="currency">CAD</span></div>
+              <button type="button" class="btn btn-primary btn-small" onclick="addToCart('classic-kairi')">+ Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="product-card-img-wrap">
+            <span class="product-tag heritage">Heritage Collection</span>
+            <a href="product.html"><img src="images/andhra_fire.jpg" alt="Andhra Fire Spicy Tomato Garlic Achar"></a>
+          </div>
+          <div class="product-card-body">
+            <div class="product-spice-rating">
+              <span class="spice-flames">🔥🔥🔥🔥</span>
+              <span style="color: #888; font-size: 12px;">Fiery Heat (25k SHU)</span>
+            </div>
+            <h3 class="product-card-title"><a href="product.html">Andhra Fire</a></h3>
+            <p class="product-card-desc">Slow-simmered vine tomatoes, roasted garlic cloves, Guntur chillies, and crackling curry leaves in gingelly oil.</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">$16.00 <span class="currency">CAD</span></div>
+              <button type="button" class="btn btn-primary btn-small" onclick="addToCart('andhra-fire')">+ Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="product-card-img-wrap">
+            <span class="product-tag studio">Studio Collection</span>
+            <a href="product.html"><img src="images/hot_honey_mango.jpg" alt="Hot Honey Mango Fusion Pickle"></a>
+          </div>
+          <div class="product-card-body">
+            <div class="product-spice-rating">
+              <span class="spice-flames">🔥🔥🔥</span>
+              <span style="color: #888; font-size: 12px;">Sweet & Fiery (18k SHU)</span>
+            </div>
+            <h3 class="product-card-title"><a href="product.html">Hot Honey Mango</a></h3>
+            <p class="product-card-desc">Raw green mango meets wildflower honey and Bhut Jolokia ghost pepper. Built for pizza, fried chicken & cheese boards.</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">$17.50 <span class="currency">CAD</span></div>
+              <button type="button" class="btn btn-rani btn-small" onclick="addToCart('hot-honey-mango')">+ Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card">
+          <div class="product-card-img-wrap">
+            <span class="product-tag studio">Studio Collection</span>
+            <a href="product.html"><img src="images/smoked_garlic.jpg" alt="Smoked Garlic & Chilli Crisp Condiment"></a>
+          </div>
+          <div class="product-card-body">
+            <div class="product-spice-rating">
+              <span class="spice-flames">🔥🔥🔥🔥</span>
+              <span style="color: #888; font-size: 12px;">Crispy Umami (22k SHU)</span>
+            </div>
+            <h3 class="product-card-title"><a href="product.html">Smoked Garlic & Chilli</a></h3>
+            <p class="product-card-desc">The Indian chili crisp. Whole roasted garlic cloves, smoked Kashmiri chillies, and sesame crunch in infused oil.</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">$17.50 <span class="currency">CAD</span></div>
+              <button type="button" class="btn btn-rani btn-small" onclick="addToCart('smoked-garlic')">+ Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collection Split Feature -->
+    <section class="section" id="collections" style="padding-top: 0;">
+      <div class="collection-split-section">
+        <div class="split-card heritage">
+          <div class="split-card-content">
+            <span class="split-card-badge">Rooted In Tradition</span>
+            <h3 class="split-card-title">The Heritage Collection</h3>
+            <p class="split-card-desc">Deeply nostalgic family recipes passed through generations. Sun-cured in ceramic jars with cold-pressed mustard oil.</p>
+            <a href="shop.html?cat=heritage" class="btn btn-light">Explore Heritage Flavors</a>
+          </div>
+        </div>
+
+        <div class="split-card studio">
+          <div class="split-card-content">
+            <span class="split-card-badge">The Modern Vanguard</span>
+            <h3 class="split-card-title">The Studio Collection</h3>
+            <p class="split-card-desc">Bold global applications. Hot honey infusions, smoky garlic chili crisps, and citrus-spiked condiments for new-school foodies.</p>
+            <a href="shop.html?cat=studio" class="btn btn-light">Explore Studio Blends</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive "Find Your Achar" Quiz -->
+    <section class="section" id="flavor-quiz">
+      <div class="quiz-wrapper">
+        <div class="section-header" style="margin-bottom: 30px;">
+          <span class="section-eyebrow">Taste Profiler</span>
+          <h2 class="section-title">Find Your Flavor Soulmate</h2>
+          <p class="section-desc">Answer 3 quick questions to find the exact jar crafted for your palate and kitchen habits.</p>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-progress">
+            <div class="quiz-progress-step active"></div>
+            <div class="quiz-progress-step"></div>
+            <div class="quiz-progress-step"></div>
+          </div>
+
+          <div id="quiz-question-container">
+            <!-- Dynamic via app.js -->
+          </div>
+
+          <div id="quiz-result-container" class="quiz-result-container">
+            <!-- Dynamic result via app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive 3-Pack Bundle Builder -->
+    <section class="section" id="bundle-builder">
+      <div class="section-header">
+        <span class="section-eyebrow">Custom Tasting Box</span>
+        <h2 class="section-title">Build Your 3-Pack Tasting Box</h2>
+        <p class="section-desc">Choose any three full-sized jars. Packaged in our custom gold-embossed presentation box with a complimentary hand-hammered brass tasting spoon.</p>
+      </div>
+
+      <div class="bundle-builder-wrapper">
+        <div class="bundle-visual-box">
+          <div id="bundle-slots" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+            <!-- Slots rendered via app.js -->
+          </div>
+        </div>
+
+        <h4 style="font-size: 16px; margin-bottom: 14px; text-align: center;">Click to Add Jars to Your Tasting Box:</h4>
+        <div class="bundle-selector-grid">
+          <div class="bundle-select-item" onclick="addJarToBundle('classic-kairi')">
+            <img src="images/classic_kairi.jpg" alt="Classic Kairi">
+            <div class="bundle-select-item-title">The Classic Kairi</div>
+            <span style="font-size: 11px; color: #D97706; font-weight: 600;">+ Add to Box</span>
+          </div>
+          <div class="bundle-select-item" onclick="addJarToBundle('andhra-fire')">
+            <img src="images/andhra_fire.jpg" alt="Andhra Fire">
+            <div class="bundle-select-item-title">Andhra Fire</div>
+            <span style="font-size: 11px; color: #D97706; font-weight: 600;">+ Add to Box</span>
+          </div>
+          <div class="bundle-select-item" onclick="addJarToBundle('hot-honey-mango')">
+            <img src="images/hot_honey_mango.jpg" alt="Hot Honey Mango">
+            <div class="bundle-select-item-title">Hot Honey Mango</div>
+            <span style="font-size: 11px; color: #D97706; font-weight: 600;">+ Add to Box</span>
+          </div>
+          <div class="bundle-select-item" onclick="addJarToBundle('smoked-garlic')">
+            <img src="images/smoked_garlic.jpg" alt="Smoked Garlic & Chilli">
+            <div class="bundle-select-item-title">Smoked Garlic & Chilli</div>
+            <span style="font-size: 11px; color: #D97706; font-weight: 600;">+ Add to Box</span>
+          </div>
+        </div>
+
+        <div class="bundle-summary-bar">
+          <div>
+            <div class="bundle-pricing">
+              <span class="bundle-price-current">$39.00 CAD</span>
+              <span class="bundle-price-old">$48.00 CAD</span>
+              <span class="bundle-savings-badge">Save 18% + Free Brass Spoon</span>
+            </div>
+            <p style="font-size: 13px; color: #777; margin-top: 4px;">Includes gift box packaging + ships free over $50</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span id="bundle-count" style="font-weight: 700; font-size: 14px; color: #666;">0/3 Selected</span>
+            <button id="add-bundle-btn" class="btn btn-secondary" disabled onclick="addCompletedBundleToCart()">
+              Select 3 Jars to Unlock Bundle
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How You #Kairi (Recipes & UGC) -->
+    <section class="section" id="recipes">
+      <div class="section-header">
+        <span class="section-eyebrow">Pairing Inventions</span>
+        <h2 class="section-title">How You #Kairi</h2>
+        <p class="section-desc">More than a side for dal and rice. Discover how top Canadian chefs and home cooks use Kairi & Co. to transform everyday meals.</p>
+      </div>
+
+      <div class="recipe-grid">
+        <div class="recipe-card" onclick="openRecipeModal('grilled-cheese')">
+          <img src="images/grilled_cheese.jpg" alt="Spicy Achar Grilled Cheese">
+          <div class="recipe-card-body">
+            <span class="recipe-tag">10 Min Recipe</span>
+            <h3 class="recipe-title">The Ultimate Spicy Achar Grilled Cheese</h3>
+            <p class="recipe-desc">Sourdough, aged sharp cheddar, gooey gruyere, and a heavy smear of tart Andhra Fire or Classic Kairi achar.</p>
+            <span style="font-size: 13px; font-weight: 700; color: #D97706;">View Recipe & Steps →</span>
+          </div>
+        </div>
+
+        <div class="recipe-card" onclick="openRecipeModal('avocado-toast')">
+          <img src="images/avocado_toast.jpg" alt="Achar Avocado Toast">
+          <div class="recipe-card-body">
+            <span class="recipe-tag">8 Min Brunch</span>
+            <h3 class="recipe-title">Sunday Achar Eggs & Sourdough Avocado Toast</h3>
+            <p class="recipe-desc">Country sourdough with smashed avocado, soft jammy eggs, and a crunchy spoonful of Smoked Garlic & Chilli crisp.</p>
+            <span style="font-size: 13px; font-weight: 700; color: #D97706;">View Recipe & Steps →</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified Customer Reviews -->
+    <section class="section" style="background: #FAF7F0; max-width: 100%; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+      <div style="max-width: 1300px; margin: 0 auto;">
+        <div class="section-header">
+          <span class="section-eyebrow">Verified Diaspora & Foodie Love</span>
+          <h2 class="section-title">Words From Our Kitchen Table</h2>
+          <p class="section-desc">Rated 4.9/5 stars across Canada for freshness, authentic spices, and zero greasy residue.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-quote">"Finally, achar that doesn't taste like 90% cheap salt and floating oil."</div>
+            <p class="review-text">The Classic Kairi reminds me of my grandmother's summer jars in Chandigarh. Tart, vibrant, and you can actually taste the roasted methi seeds!</p>
+            <div class="review-author">
+              <span>Simran K. • Toronto, ON</span>
+              <span class="verified-badge">✓ Verified Buyer</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-quote">"Hot Honey Mango on Detroit-style pizza is a game changer."</div>
+            <p class="review-text">I ordered the 3-pack box out of curiosity. The Hot Honey Mango with ghost pepper has replaced my hot honey permanently. Absolute perfection.</p>
+            <div class="review-author">
+              <span>Marc L. • Vancouver, BC</span>
+              <span class="verified-badge">✓ Verified Buyer</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-quote">"Smoked Garlic & Chilli is the desi chili crisp we always needed."</div>
+            <p class="review-text">I put this on everything: noodles, fried eggs, and straight over plain white rice with a dollop of ghee. The packaging and brass spoon are stunning too.</p>
+            <div class="review-author">
+              <span>Ananya M. • Montreal, QC</span>
+              <span class="verified-badge">✓ Verified Buyer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter VIP Section -->
+    <section class="newsletter-section">
+      <div class="newsletter-content">
+        <h2>Join The Kairi Secret Table</h2>
+        <p>Subscribe for private small-batch drop notices, secret spice route recipes, and receive <strong>10% off</strong> your first order.</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn-primary">Get 10% Off</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">KAIRI & CO.</div>
+        <p style="max-width: 320px; line-height: 1.6; margin-bottom: 16px;">
+          The Indian Condiment. Reimagined. Handcrafted small-batch achar honoring heritage recipes with single-origin spices and cold-pressed oils.
+        </p>
+        <p style="font-size: 13px; color: #888;">🍁 Proudly packaged & distributed across Canada from our Toronto hub.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">Shop All</a></li>
+          <li><a href="product.html">The Classic Kairi</a></li>
+          <li><a href="shop.html?cat=heritage">The Heritage Collection</a></li>
+          <li><a href="shop.html?cat=studio">The Studio Collection</a></li>
+          <li><a href="#bundle-builder">Build a Tasting Box</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="story.html#sourcing">Spice Sourcing</a></li>
+          <li><a href="#recipes">Pairing Recipes</a></li>
+          <li><a href="story.html#faq">Wholesale Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Help & Care</h4>
+        <ul>
+          <li><a href="product.html#shipping">Shipping & Returns</a></li>
+          <li><a href="product.html#storage">Storage & Freshness</a></li>
+          <li><a href="story.html#contact">Contact Care Team</a></li>
+          <li><a href="#">Privacy & Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Kairi & Co. Canada. All Rights Reserved.</div>
+      <div class="payment-badges">
+        <span>🔒 256-Bit SSL Encrypted Checkout</span>
+        <span>• Apple Pay</span>
+        <span>• Shop Pay</span>
+        <span>• Visa</span>
+        <span>• Mastercard</span>
+        <span>• Interac</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Cart Drawer -->
+  <div id="cart-overlay" class="cart-drawer-overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3>Your Pantry Cart (<span class="cart-badge">0</span>)</h3>
+      <button id="close-cart-btn" class="close-drawer-btn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress Bar -->
+    <div class="cart-shipping-bar">
+      <div class="shipping-bar-text" id="shipping-msg">
+        Add <strong>$50.00 CAD</strong> to unlock <strong>Free Canadian Shipping</strong>!
+      </div>
+      <div class="shipping-progress-track">
+        <div id="shipping-fill" class="shipping-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Container -->
+    <div class="cart-drawer-body" id="cart-drawer-items">
+      <!-- Injected via app.js -->
+    </div>
+
+    <!-- In-Cart 1-Click Upsell -->
+    <div style="padding: 0 24px 14px 24px;">
+      <div class="cart-upsell-module">
+        <img src="images/tasting_box.jpg" alt="Handcrafted Brass Tasting Spoon">
+        <div class="cart-upsell-text">
+          <h5>Handcrafted Brass Spoon</h5>
+          <p>Hammered brass scoop for your jars.</p>
+        </div>
+        <button class="btn btn-secondary btn-small" onclick="addCartUpsell('tasting-spoon')">+ $5.00</button>
+      </div>
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span>Taxes & Shipping:</span>
+        <span>Calculated at checkout</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal">$0.00 CAD</span>
+      </div>
+
+      <div class="accelerated-checkout">
+        <button class="btn-shop-pay" onclick="launchCheckoutModal('Shop Pay')">Shop Pay</button>
+        <button class="btn-apple-pay" onclick="launchCheckoutModal('Apple Pay')"> Pay</button>
+      </div>
+
+      <button class="btn btn-primary btn-block" onclick="launchCheckoutModal('Standard Checkout')">
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Recipe Details Modal -->
+  <div id="recipe-modal" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close-btn" onclick="closeModal('recipe-modal')">&times;</button>
+      <div id="recipe-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Simulated Checkout Modal -->
+  <div id="checkout-modal" class="modal-overlay">
+    <div class="modal-box" id="checkout-modal-body">
+      <button class="modal-close-btn" onclick="closeModal('checkout-modal')">&times;</button>
+      <span class="section-eyebrow">EXPRESS CHECKOUT FLOW</span>
+      <h3 style="font-size: 24px; margin: 8px 0 16px 0; font-family: var(--font-heading);">Confirm Your Order</h3>
+      <div id="checkout-modal-summary"></div>
+      <button class="btn btn-primary btn-block" onclick="completeSimulatedOrder()">
+        Place Order Now
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay"></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <span class="mobile-nav-brand">KAIRI & CO.</span>
+      <button id="mobile-nav-close" class="close-drawer-btn" aria-label="Close navigation">&times;</button>
+    </div>
+    <div class="mobile-nav-body">
+      <nav class="mobile-nav-list">
+        <a href="index.html" class="mobile-nav-link active">Home</a>
+        <a href="shop.html" class="mobile-nav-link">Shop All</a>
+        <a href="product.html" class="mobile-nav-link">The Classic Kairi</a>
+        <a href="index.html#bundle-builder" class="mobile-nav-link">Build a Box (Save 18%)</a>
+        <a href="story.html" class="mobile-nav-link">Our Story & Craft</a>
+        <a href="index.html#recipes" class="mobile-nav-link">Pairings & Recipes</a>
+        <a href="index.html#taste-quiz" class="mobile-nav-link">Find Your Achar Quiz</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <div class="mobile-nav-badge">🇨🇦 Handcrafted in Canada</div>
+        <p class="mobile-nav-subtext">Free Express Shipping across Canada on orders over $50 CAD</p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
