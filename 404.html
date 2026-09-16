@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Page Not Found | Kairi & Co.</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .not-found-wrap {
+      min-height: 80vh;
+      min-height: 80dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .not-found-icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+    .not-found-title {
+      font-size: 38px;
+      margin-bottom: 12px;
+      font-family: var(--font-heading);
+    }
+    .not-found-desc {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      max-width: 480px;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>🇨🇦 FREE EXPRESS SHIPPING ACROSS CANADA ON ORDERS OVER $50 CAD</span>
+    <span class="badge-cad">CAD $ (Canada)</span>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">KAIRI & CO.</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop All</a>
+        <a href="product.html?id=classic-kairi">The Classic Kairi</a>
+        <a href="story.html">Our Story</a>
+      </nav>
+      <div class="header-actions">
+        <a href="shop.html" class="header-btn">Shop Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="not-found-wrap">
+    <div class="not-found-icon">🏺</div>
+    <h1 class="not-found-title">Looks like this jar is missing!</h1>
+    <p class="not-found-desc">
+      The recipe or page you're searching for isn't on our pantry shelf. Head back to our storefront to explore small-batch Indian achar pickles handcrafted for Canadian kitchens.
+    </p>
+    <a href="index.html" class="btn btn-primary">Return to Storefront</a>
+  </main>
+
+</body>
+</html>
