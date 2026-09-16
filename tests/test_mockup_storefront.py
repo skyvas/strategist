@@ -133,6 +133,64 @@ def test_styles_mobile_compatibility():
     assert "font-size: 16px !important" in css, "iOS Safari auto-zoom prevention rule missing"
     print("✓ CSS safe areas, 100dvh viewport height, and iOS/Android touch rules verified.")
 
+def test_dynamic_pdp_and_product_routing():
+    # 1. Verify shop.html links each product to its dedicated PDP with ?id=
+    with open(os.path.join(BASE_DIR, "shop.html"), "r", encoding="utf-8") as f:
+        shop_html = f.read()
+    expected_ids = ["classic-kairi", "andhra-fire", "hot-honey-mango", "smoked-garlic", "tasting-box"]
+    for pid in expected_ids:
+        assert f'href="product.html?id={pid}"' in shop_html, f"shop.html missing dedicated link for {pid}"
+    assert 'href="product.html"' not in shop_html, "shop.html contains unparameterized product.html link"
+
+    # 2. Verify index.html links each signature product to its dedicated PDP with ?id=
+    with open(os.path.join(BASE_DIR, "index.html"), "r", encoding="utf-8") as f:
+        index_html = f.read()
+    for pid in ["classic-kairi", "andhra-fire", "hot-honey-mango", "smoked-garlic"]:
+        assert f'href="product.html?id={pid}"' in index_html, f"index.html missing dedicated link for {pid}"
+    assert 'href="product.html"' not in index_html, "index.html contains unparameterized product.html link"
+
+    # 3. Verify product.html has all dynamic PDP injection targets
+    with open(os.path.join(BASE_DIR, "product.html"), "r", encoding="utf-8") as f:
+        pdp_html = f.read()
+    required_pdp_ids = [
+        "pdp-main-img",
+        "pdp-thumbnails",
+        "pdp-breadcrumb-cat",
+        "pdp-breadcrumb-title",
+        "pdp-batch-tag",
+        "pdp-title",
+        "pdp-rating-score",
+        "pdp-review-count",
+        "pdp-bestseller-badge",
+        "pdp-price-display",
+        "pdp-price-compare",
+        "pdp-discount-pill",
+        "pdp-short-desc",
+        "pdp-spice-box",
+        "pdp-onetime-price",
+        "pdp-sub-price",
+        "pdp-pack-options",
+        "pdp-ingredients-text",
+        "pdp-allergens-text",
+        "pdp-pairings-text",
+        "pdp-cross-sells",
+        "sticky-pdp-img",
+        "sticky-pdp-title"
+    ]
+    for element_id in required_pdp_ids:
+        assert f'id="{element_id}"' in pdp_html, f"product.html missing dynamic injection container: {element_id}"
+    assert "addToCart('classic-kairi'" not in pdp_html, "product.html should not have hardcoded inline classic-kairi add-to-cart call"
+
+    # 4. Verify app.js handles dynamic PDP resolution from URL query params
+    with open(os.path.join(BASE_DIR, "app.js"), "r", encoding="utf-8") as f:
+        app_js = f.read()
+    assert "URLSearchParams(window.location.search)" in app_js, "app.js missing URLSearchParams resolution"
+    assert "currentPdpId" in app_js, "app.js missing currentPdpId state tracking"
+    assert "pdp-cross-sells" in app_js, "app.js missing dynamic cross-sells rendering"
+    assert "addToCart(currentPdpId" in app_js, "handlePdpAddToCart in app.js must add dynamic currentPdpId to cart"
+
+    print("✓ Dynamic PDP resolution, URL routing (?id=...), and dynamic cart operations verified.")
+
 def test_github_pages_deployment_artifacts():
     nojekyll_path = os.path.join(BASE_DIR, ".nojekyll")
     assert os.path.exists(nojekyll_path), ".nojekyll missing from static-mockup"
@@ -153,6 +211,7 @@ if __name__ == "__main__":
     test_http_endpoints_200()
     test_html_semantic_and_mobile_structures()
     test_product_catalog_and_temp_db_engine()
+    test_dynamic_pdp_and_product_routing()
     test_styles_mobile_compatibility()
     test_github_pages_deployment_artifacts()
     print("--- ALL VERIFICATION TESTS PASSED (100% SUCCESS) ---")

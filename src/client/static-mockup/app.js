@@ -6,57 +6,182 @@ const CATALOG = {
   'classic-kairi': {
     id: 'classic-kairi',
     name: 'The Classic Kairi',
+    fullTitle: 'The Classic Kairi: Premium Spicy Mango Achar',
     category: 'Heritage Collection',
+    batchTag: 'Heritage Collection • Small-Batch Batch #12',
     price: 16.00,
     comparePrice: 19.00,
+    discount: '16% OFF',
+    rating: '4.9 / 5.0',
+    reviewCount: '(1,245 Verified Reviews)',
+    bestsellerBadge: '#1 BESTSELLER',
     image: 'images/classic_kairi.jpg',
+    gallery: [
+      'images/classic_kairi.jpg',
+      'images/hero_banner.jpg',
+      'images/grilled_cheese.jpg',
+      'images/avocado_toast.jpg',
+      'images/tasting_box.jpg'
+    ],
     spiceLevel: 3,
+    spiceLabel: 'Spice Level: Medium Kick',
+    scoville: '~12,000 Scoville Heat Units (SHU)',
+    flames: '🔥🔥🔥',
+    spiceRatio: '3 / 5',
     flavor: 'Tart, Mustardy, Fiery',
-    desc: 'The undisputed king of Punjabi achar. Raw green mango steeped in cold-pressed mustard oil, fenugreek, and whole spices.'
+    desc: 'The undisputed king of Punjabi achar. Raw green mango steeped in cold-pressed mustard oil, fenugreek, and whole spices.',
+    ingredients: 'Hand-cut Green Mango (65%), Cold-Pressed Pure Mustard Oil, Iodized Salt, Red Chilli Powder, Fenugreek Seeds (Methi), Fennel Seeds (Saunf), Nigella Seeds (Kalonji), Turmeric Powder, Asafoetida (Hing), Whole Spices.',
+    allergens: 'Contains Mustard. Free from artificial preservatives, MSG, synthetic food colors, or added corn syrups. 100% Plant-Based & Naturally Gluten-Free.',
+    pairings: 'Traditional: Warm aloo parathas with homemade butter, dal tadka with steamed basmati, or yellow moong khichdi. Modern: Gourmet sourdough grilled cheese, morning avocado toast, or spicy yogurt dip.',
+    packs: {
+      1: { name: '1 Jar', price: 16.00, saveText: 'Standard', variant: 'Single Jar (350g)' },
+      3: { name: '3-Pack', price: 42.00, saveText: 'Save $6.00', variant: '3-Pack Bundle' },
+      6: { name: '6-Pack Case', price: 78.00, saveText: 'Save $18 + Free Ship', variant: '6-Pack Case' }
+    }
   },
   'andhra-fire': {
     id: 'andhra-fire',
     name: 'Andhra Fire',
+    fullTitle: 'Andhra Fire: Fiery Tomato & Garlic Relish',
     category: 'Heritage Collection',
+    batchTag: 'Heritage Collection • Small-Batch Batch #08',
     price: 16.00,
     comparePrice: 19.00,
+    discount: '16% OFF',
+    rating: '4.95 / 5.0',
+    reviewCount: '(892 Verified Reviews)',
+    bestsellerBadge: 'SPICE OBSESSION',
     image: 'images/andhra_fire.jpg',
+    gallery: [
+      'images/andhra_fire.jpg',
+      'images/hero_banner.jpg',
+      'images/grilled_cheese.jpg',
+      'images/avocado_toast.jpg',
+      'images/tasting_box.jpg'
+    ],
     spiceLevel: 4,
+    spiceLabel: 'Spice Level: Deep South Indian Fire',
+    scoville: '~35,000 Scoville Heat Units (SHU)',
+    flames: '🔥🔥🔥🔥',
+    spiceRatio: '4 / 5',
     flavor: 'Smoky, Garlic, Deep Chili',
-    desc: 'Fiery South Indian relish with slow-simmered vine tomatoes, whole roasted garlic, and crisp curry leaves.'
+    desc: 'Fiery South Indian relish with slow-simmered vine tomatoes, whole roasted garlic, and crisp curry leaves.',
+    ingredients: 'Vine Ripe Tomatoes, Cold-Pressed Gingelly (Sesame) & Pure Mustard Oil, Whole Roasted Garlic Cloves, Guntur Red Chillies, Fresh Curry Leaves, Tamarind Pulp, Fenugreek, Mustard Seeds, Rock Salt.',
+    allergens: 'Contains Sesame & Mustard. Free from artificial preservatives, artificial flavors, and thickeners. 100% Vegan & Gluten-Free.',
+    pairings: 'Traditional: Crisp golden dosas, hot steamed idlis, ghee podi rice. Modern: Spreading on sourdough burgers, steak sandwiches, or loaded breakfast burritos.',
+    packs: {
+      1: { name: '1 Jar', price: 16.00, saveText: 'Standard', variant: 'Single Jar (350g)' },
+      3: { name: '3-Pack', price: 42.00, saveText: 'Save $6.00', variant: '3-Pack Bundle' },
+      6: { name: '6-Pack Case', price: 78.00, saveText: 'Save $18 + Free Ship', variant: '6-Pack Case' }
+    }
   },
   'hot-honey-mango': {
     id: 'hot-honey-mango',
     name: 'Hot Honey Mango',
+    fullTitle: 'Hot Honey Mango: Wildflower Honey & Ghost Pepper',
     category: 'Studio Collection',
+    batchTag: 'Studio Collection • Small-Batch Batch #05',
     price: 17.50,
     comparePrice: 21.00,
+    discount: '17% OFF',
+    rating: '4.85 / 5.0',
+    reviewCount: '(640 Verified Reviews)',
+    bestsellerBadge: 'CULINARY FUSION',
     image: 'images/hot_honey_mango.jpg',
+    gallery: [
+      'images/hot_honey_mango.jpg',
+      'images/grilled_cheese.jpg',
+      'images/hero_banner.jpg',
+      'images/avocado_toast.jpg',
+      'images/tasting_box.jpg'
+    ],
     spiceLevel: 3,
+    spiceLabel: 'Spice Level: Sweet Front, Ghost Pepper Finish',
+    scoville: '~25,000 Scoville Heat Units (SHU)',
+    flames: '🔥🔥🔥',
+    spiceRatio: '3 / 5',
     flavor: 'Sweet Heat, Ghost Pepper, Wildflower',
-    desc: 'Sweet golden wildflower honey infused with tart raw mango and a subtle kiss of Bhut Jolokia (ghost pepper).'
+    desc: 'Sweet golden wildflower honey infused with tart raw mango and a subtle kiss of Bhut Jolokia (ghost pepper).',
+    ingredients: '100% Pure Canadian Unpasteurized Wildflower Honey, Sun-Cured Raw Green Mangoes, Organic Apple Cider Vinegar, Bhut Jolokia (Ghost Pepper), Kashmiri Chili Flakes, Pink Himalayan Salt, Whole Spices.',
+    allergens: 'Contains Raw Honey. Gluten-Free. No refined sugar or corn syrup.',
+    pairings: 'Traditional: Samosa dip, tandoori marinades. Modern: Drizzled on pepperoni sourdough pizza, crispy fried chicken & waffles, baked artisan brie, charcuterie boards.',
+    packs: {
+      1: { name: '1 Jar', price: 17.50, saveText: 'Standard', variant: 'Single Jar (350g)' },
+      3: { name: '3-Pack', price: 46.00, saveText: 'Save $6.50', variant: '3-Pack Bundle' },
+      6: { name: '6-Pack Case', price: 86.00, saveText: 'Save $19 + Free Ship', variant: '6-Pack Case' }
+    }
   },
   'smoked-garlic': {
     id: 'smoked-garlic',
     name: 'Smoked Garlic & Chilli',
+    fullTitle: 'Smoked Garlic & Chilli: The Indian Chili Crisp',
     category: 'Studio Collection',
+    batchTag: 'Studio Collection • Small-Batch Batch #09',
     price: 17.50,
     comparePrice: 21.00,
+    discount: '17% OFF',
+    rating: '4.92 / 5.0',
+    reviewCount: '(1,010 Verified Reviews)',
+    bestsellerBadge: 'VIRAL FAVORITE',
     image: 'images/smoked_garlic.jpg',
+    gallery: [
+      'images/smoked_garlic.jpg',
+      'images/avocado_toast.jpg',
+      'images/grilled_cheese.jpg',
+      'images/hero_banner.jpg',
+      'images/tasting_box.jpg'
+    ],
     spiceLevel: 4,
+    spiceLabel: 'Spice Level: Crispy Savory Umami Heat',
+    scoville: '~28,000 Scoville Heat Units (SHU)',
+    flames: '🔥🔥🔥🔥',
+    spiceRatio: '4 / 5',
     flavor: 'Crispy Garlic, Umami, Kashmiri Chili',
-    desc: 'The Indian chili crisp. Whole roasted garlic cloves, crunchy seeds, and roasted Kashmiri chillies in infused oil.'
+    desc: 'The Indian chili crisp. Whole roasted garlic cloves, crunchy seeds, and roasted Kashmiri chillies in infused oil.',
+    ingredients: 'Thin-Sliced Roasted Garlic (45%), Shallots, Cold-Pressed Mustard Oil, Sesame Oil, Crushed Kashmiri Chillies, Toasted White Sesame Seeds, Szechuan Peppercorns, Sea Salt, Mushroom Powder for Umami.',
+    allergens: 'Contains Sesame & Mustard. 100% Vegan & Gluten-Free.',
+    pairings: 'Traditional: Dal tadka topping, curd rice tempering. Modern: Steaming bowls of ramen, crispy sunny-side eggs, garlic noodles, roasted dumplings, avocado toast.',
+    packs: {
+      1: { name: '1 Jar', price: 17.50, saveText: 'Standard', variant: 'Single Jar (350g)' },
+      3: { name: '3-Pack', price: 46.00, saveText: 'Save $6.50', variant: '3-Pack Bundle' },
+      6: { name: '6-Pack Case', price: 86.00, saveText: 'Save $19 + Free Ship', variant: '6-Pack Case' }
+    }
   },
   'tasting-box': {
     id: 'tasting-box',
     name: 'The Kairi Tasting Box (3-Pack)',
+    fullTitle: 'The Kairi Tasting Box: 3 Curated Jars + Brass Spoon',
     category: 'Curated Bundles',
+    batchTag: 'Curated Bundles • Limited Gift Edition',
     price: 39.00,
     comparePrice: 48.00,
+    discount: '19% OFF',
+    rating: '4.98 / 5.0',
+    reviewCount: '(2,100 Verified Reviews)',
+    bestsellerBadge: 'PERFECT GIFT',
     image: 'images/tasting_box.jpg',
+    gallery: [
+      'images/tasting_box.jpg',
+      'images/classic_kairi.jpg',
+      'images/andhra_fire.jpg',
+      'images/hot_honey_mango.jpg',
+      'images/smoked_garlic.jpg'
+    ],
     spiceLevel: 3,
+    spiceLabel: 'Spice Spectrum: Mild to Fiery',
+    scoville: '~12,000 to ~35,000 SHU',
+    flames: '🔥🔥🔥',
+    spiceRatio: '3 / 5',
     flavor: '3 Best-Sellers + Brass Spoon',
-    desc: 'The ultimate culinary gift set. Three artisanal jars and a handcrafted hammered brass tasting spoon.'
+    desc: 'The ultimate culinary gift set. Three artisanal jars and a handcrafted hammered brass tasting spoon.',
+    ingredients: 'Includes: 1x The Classic Kairi (350g), 1x Andhra Fire (350g), 1x Hot Honey Mango (350g), and 1x Hand-Forged Hammered Brass Tasting Spoon in luxury presentation gift box.',
+    allergens: 'See individual jar labels. All jars 100% natural and free of preservatives.',
+    pairings: 'Ideal for food enthusiasts, hosts, holiday gifting, and setting up the complete luxury Indian pantry spread.',
+    packs: {
+      1: { name: '1 Box Set', price: 39.00, saveText: 'Includes Spoon', variant: 'Curated Tasting Box (3 Jars + Spoon)' },
+      3: { name: '2 Boxes', price: 72.00, saveText: 'Save $6.00', variant: '2x Tasting Box Set' },
+      6: { name: '3 Boxes', price: 105.00, saveText: 'Save $12 + Free Ship', variant: '3x Tasting Box Set' }
+    }
   },
   'tasting-spoon': {
     id: 'tasting-spoon',
@@ -718,35 +843,264 @@ function openRecipeModal(recipeKey) {
   }
 }
 
-// PDP Interactivity (Product Detail Page)
+// PDP Interactivity & Dynamic Resolution (Product Detail Page)
+let currentPdpId = 'classic-kairi';
+let pdpQty = 1;
+let currentPack = '1';
+let isSubscription = false;
+
+function changePdpQty(delta) {
+  pdpQty = Math.max(1, pdpQty + delta);
+  const qtyEl = document.getElementById('pdp-qty-val');
+  if (qtyEl) qtyEl.textContent = pdpQty;
+  updatePdpPrice();
+}
+
+function selectPurchaseOption(type) {
+  isSubscription = (type === 'sub');
+  const optOne = document.getElementById('opt-onetime');
+  const optSub = document.getElementById('opt-sub');
+  if (optOne) optOne.classList.toggle('selected', !isSubscription);
+  if (optSub) optSub.classList.toggle('selected', isSubscription);
+  updatePdpPrice();
+}
+
+function updatePdpPrice() {
+  const prod = CATALOG[currentPdpId] || CATALOG['classic-kairi'];
+  const pack = (prod.packs && prod.packs[currentPack]) || { price: prod.price, variant: 'Single Jar (350g)' };
+  let basePrice = pack.price;
+  let variantName = pack.variant || pack.name;
+
+  if (isSubscription) {
+    basePrice = basePrice * 0.85; // 15% discount for auto-delivery
+    variantName += ' (Monthly Subscription)';
+  }
+
+  const totalForQty = (basePrice * pdpQty).toFixed(2);
+  const pdpPriceDisplay = document.getElementById('pdp-price-display');
+  const mainAddToCartBtn = document.getElementById('main-add-to-cart-btn');
+  const stickyBtnPrice = document.getElementById('sticky-btn-price');
+
+  if (pdpPriceDisplay) pdpPriceDisplay.textContent = `$${basePrice.toFixed(2)} CAD`;
+  if (mainAddToCartBtn) mainAddToCartBtn.textContent = `Add to Cart • $${totalForQty} CAD`;
+  if (stickyBtnPrice) stickyBtnPrice.textContent = `$${totalForQty} CAD`;
+}
+
+function handlePdpAddToCart() {
+  const prod = CATALOG[currentPdpId] || CATALOG['classic-kairi'];
+  const pack = (prod.packs && prod.packs[currentPack]) || { price: prod.price, variant: 'Single Jar (350g)' };
+  let basePrice = pack.price;
+  let variantName = pack.variant || pack.name;
+  if (isSubscription) {
+    basePrice = basePrice * 0.85;
+    variantName += ' (Subscription)';
+  }
+  addToCart(currentPdpId, pdpQty, variantName, basePrice);
+}
+
 function initPDP() {
-  const thumbs = document.querySelectorAll('.pdp-thumb-item');
+  // 1. Resolve product ID from URL query parameters (?id=...)
+  const urlParams = new URLSearchParams(window.location.search);
+  const requestedId = urlParams.get('id');
+  if (requestedId && CATALOG[requestedId]) {
+    currentPdpId = requestedId;
+  } else {
+    currentPdpId = 'classic-kairi';
+  }
+
+  const prod = CATALOG[currentPdpId];
+  if (!prod) return;
+
+  // 2. Set document title
+  document.title = `${prod.fullTitle || prod.name} | Kairi & Co.`;
+
+  // 3. Breadcrumbs
+  const bCat = document.getElementById('pdp-breadcrumb-cat');
+  const bTitle = document.getElementById('pdp-breadcrumb-title');
+  if (bCat) {
+    bCat.textContent = prod.category;
+    if (prod.category.includes('Heritage')) {
+      bCat.href = 'shop.html?cat=heritage';
+    } else if (prod.category.includes('Studio')) {
+      bCat.href = 'shop.html?cat=studio';
+    } else {
+      bCat.href = 'shop.html';
+    }
+  }
+  if (bTitle) bTitle.textContent = prod.name;
+
+  // 4. Badges & Titles
+  const batchTag = document.getElementById('pdp-batch-tag');
+  if (batchTag) batchTag.textContent = prod.batchTag || prod.category;
+
+  const titleEl = document.getElementById('pdp-title');
+  if (titleEl) titleEl.textContent = prod.fullTitle || prod.name;
+
+  const ratingEl = document.getElementById('pdp-rating-score');
+  if (ratingEl) ratingEl.textContent = prod.rating || '4.9 / 5.0';
+
+  const reviewEl = document.getElementById('pdp-review-count');
+  if (reviewEl) reviewEl.textContent = prod.reviewCount || '(1,245 Verified Reviews)';
+
+  const badgeEl = document.getElementById('pdp-bestseller-badge');
+  if (badgeEl) {
+    badgeEl.textContent = prod.bestsellerBadge || '#1 BESTSELLER';
+  }
+
+  // 5. Pricing
+  const priceDisplay = document.getElementById('pdp-price-display');
+  if (priceDisplay) priceDisplay.textContent = `$${prod.price.toFixed(2)} CAD`;
+
+  const compareEl = document.getElementById('pdp-price-compare');
+  if (compareEl) compareEl.textContent = `$${prod.comparePrice.toFixed(2)} CAD`;
+
+  const discountEl = document.getElementById('pdp-discount-pill');
+  if (discountEl) discountEl.textContent = prod.discount || '';
+
+  const onetimePriceEl = document.getElementById('pdp-onetime-price');
+  if (onetimePriceEl) onetimePriceEl.textContent = `$${prod.price.toFixed(2)} CAD`;
+
+  const subPriceEl = document.getElementById('pdp-sub-price');
+  if (subPriceEl) subPriceEl.textContent = `$${(prod.price * 0.85).toFixed(2)} CAD`;
+
+  // 6. Short description
+  const descEl = document.getElementById('pdp-short-desc');
+  if (descEl) descEl.textContent = prod.desc;
+
+  // 7. Spice meter
+  const spiceBox = document.getElementById('pdp-spice-box');
+  if (spiceBox) {
+    if (prod.spiceLevel === 0) {
+      spiceBox.style.display = 'none';
+    } else {
+      spiceBox.style.display = 'flex';
+      const spiceLabel = document.getElementById('pdp-spice-label');
+      const scovilleEl = document.getElementById('pdp-spice-scoville');
+      const flamesEl = document.getElementById('pdp-flames');
+      const ratioEl = document.getElementById('pdp-spice-ratio');
+
+      if (spiceLabel) spiceLabel.textContent = prod.spiceLabel;
+      if (scovilleEl) scovilleEl.textContent = prod.scoville;
+      if (flamesEl) flamesEl.textContent = prod.flames;
+      if (ratioEl) ratioEl.textContent = prod.spiceRatio;
+    }
+  }
+
+  // 8. Gallery and Thumbnails
   const mainImg = document.getElementById('pdp-main-img');
-  
-  if (thumbs.length && mainImg) {
+  const thumbsContainer = document.getElementById('pdp-thumbnails');
+  if (mainImg) {
+    mainImg.src = prod.image;
+    mainImg.alt = prod.fullTitle || prod.name;
+  }
+
+  if (thumbsContainer && prod.gallery && prod.gallery.length) {
+    thumbsContainer.innerHTML = prod.gallery.map((imgSrc, idx) => `
+      <div class="pdp-thumb-item ${idx === 0 ? 'active' : ''}" data-img="${imgSrc}">
+        <img src="${imgSrc}" alt="${prod.name} gallery image ${idx + 1}">
+      </div>
+    `).join('');
+
+    const thumbs = thumbsContainer.querySelectorAll('.pdp-thumb-item');
     thumbs.forEach(thumb => {
       thumb.addEventListener('click', () => {
         thumbs.forEach(t => t.classList.remove('active'));
         thumb.classList.add('active');
         const newSrc = thumb.getAttribute('data-img');
-        if (newSrc) mainImg.src = newSrc;
+        if (newSrc && mainImg) mainImg.src = newSrc;
       });
     });
   }
 
-  // Pack selector
-  const packBtns = document.querySelectorAll('.pack-btn');
-  const priceDisplay = document.getElementById('pdp-price-display');
-  packBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      packBtns.forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      const price = btn.getAttribute('data-price');
-      if (priceDisplay && price) {
-        priceDisplay.textContent = `$${parseFloat(price).toFixed(2)} CAD`;
-      }
+  // 9. Dynamic Pack Selection Options
+  const packContainer = document.getElementById('pdp-pack-options');
+  if (packContainer && prod.packs) {
+    const packKeys = Object.keys(prod.packs);
+    packContainer.innerHTML = packKeys.map((key, idx) => {
+      const pack = prod.packs[key];
+      const isSelected = (idx === 0);
+      return `
+        <div class="pack-btn ${isSelected ? 'selected' : ''}" data-pack="${key}" data-price="${pack.price}">
+          <div class="pack-btn-title">${pack.name}</div>
+          <div class="pack-btn-price">$${pack.price.toFixed(2)}</div>
+          <div class="${idx === 0 ? '' : 'pack-btn-save'}" style="${idx === 0 ? 'font-size: 11px; color: #888;' : ''}">${pack.saveText}</div>
+        </div>
+      `;
+    }).join('');
+
+    const packBtns = packContainer.querySelectorAll('.pack-btn');
+    packBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        packBtns.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        currentPack = btn.getAttribute('data-pack');
+        updatePdpPrice();
+      });
     });
-  });
+  }
+
+  // 10. Accordions Content
+  const ingText = document.getElementById('pdp-ingredients-text');
+  if (ingText && prod.ingredients) ingText.textContent = prod.ingredients;
+
+  const algText = document.getElementById('pdp-allergens-text');
+  if (algText && prod.allergens) algText.textContent = prod.allergens;
+
+  const pairText = document.getElementById('pdp-pairings-text');
+  if (pairText && prod.pairings) pairText.textContent = prod.pairings;
+
+  // 11. Cross-Sells (Frequently Paired)
+  const crossSellContainer = document.getElementById('pdp-cross-sells');
+  if (crossSellContainer) {
+    const crossIds = Object.keys(CATALOG).filter(k => k !== currentPdpId && k !== 'tasting-spoon').slice(0, 3);
+    crossSellContainer.innerHTML = crossIds.map(cid => {
+      const cp = CATALOG[cid];
+      const tagClass = cp.category && cp.category.includes('Studio') ? 'studio' : 'heritage';
+      const btnClass = tagClass === 'studio' ? 'btn-rani' : 'btn-primary';
+      return `
+        <div class="product-card">
+          <div class="product-card-img-wrap">
+            <span class="product-tag ${tagClass}">${cp.category}</span>
+            <a href="product.html?id=${cp.id}"><img src="${cp.image}" alt="${cp.name}"></a>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title"><a href="product.html?id=${cp.id}">${cp.name}</a></h3>
+            <p class="product-card-desc">${cp.desc}</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">$${cp.price.toFixed(2)} CAD</div>
+              <button type="button" class="btn ${btnClass} btn-small" onclick="addToCart('${cp.id}')">+ Add</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // 12. Sticky Buy Bar
+  const stickyImg = document.getElementById('sticky-pdp-img');
+  const stickyTitle = document.getElementById('sticky-pdp-title');
+  const stickyPriceDisplay = document.getElementById('sticky-price-display');
+  const stickyBtnPrice = document.getElementById('sticky-btn-price');
+
+  if (stickyImg) {
+    stickyImg.src = prod.image;
+    stickyImg.alt = prod.name;
+  }
+  if (stickyTitle) stickyTitle.textContent = prod.fullTitle || prod.name;
+  if (stickyPriceDisplay) stickyPriceDisplay.textContent = `$${prod.price.toFixed(2)} CAD • ${prod.category}`;
+  if (stickyBtnPrice) stickyBtnPrice.textContent = `$${prod.price.toFixed(2)} CAD`;
+
+  // Reset state
+  pdpQty = 1;
+  currentPack = '1';
+  isSubscription = false;
+  const qtyVal = document.getElementById('pdp-qty-val');
+  if (qtyVal) qtyVal.textContent = '1';
+  const optOne = document.getElementById('opt-onetime');
+  const optSub = document.getElementById('opt-sub');
+  if (optOne) optOne.classList.add('selected');
+  if (optSub) optSub.classList.remove('selected');
+  updatePdpPrice();
 
   // Sticky Buy Bar scroll trigger
   const buyBox = document.querySelector('.pdp-buy-box');
@@ -766,7 +1120,8 @@ function initPDP() {
   const accordionItems = document.querySelectorAll('.pdp-accordion-item');
   accordionItems.forEach(item => {
     const header = item.querySelector('.pdp-accordion-header');
-    if (header) {
+    if (header && !header.dataset.hasAccordionListener) {
+      header.dataset.hasAccordionListener = 'true';
       header.addEventListener('click', () => {
         item.classList.toggle('open');
       });

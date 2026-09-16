@@ -45,8 +45,8 @@
     <!-- Breadcrumbs -->
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="index.html">Home</a> &gt; 
-      <a href="shop.html?cat=heritage">Heritage Collection</a> &gt; 
-      <span>The Classic Kairi</span>
+      <a href="shop.html?cat=heritage" id="pdp-breadcrumb-cat">Heritage Collection</a> &gt; 
+      <span id="pdp-breadcrumb-title">The Classic Kairi</span>
     </nav>
 
     <div class="pdp-grid">
@@ -55,7 +55,7 @@
         <div class="pdp-main-image">
           <img id="pdp-main-img" src="images/classic_kairi.jpg" alt="The Classic Kairi Mango Achar Jar with Brass Tasting Spoon">
         </div>
-        <div class="pdp-thumbnails">
+        <div class="pdp-thumbnails" id="pdp-thumbnails">
           <div class="pdp-thumb-item active" data-img="images/classic_kairi.jpg">
             <img src="images/classic_kairi.jpg" alt="Jar & Tasting Spoon">
           </div>
@@ -76,35 +76,35 @@
 
       <!-- Buy Box Column -->
       <div class="pdp-buy-box">
-        <span class="pdp-badge-collection">Heritage Collection • Small-Batch Batch #12</span>
-        <h1 class="pdp-title">The Classic Kairi: Premium Spicy Mango Achar</h1>
+        <span class="pdp-badge-collection" id="pdp-batch-tag">Heritage Collection • Small-Batch Batch #12</span>
+        <h1 class="pdp-title" id="pdp-title">The Classic Kairi: Premium Spicy Mango Achar</h1>
         
         <div class="pdp-rating-row">
           <span class="stars">★★★★★</span>
-          <strong>4.9 / 5.0</strong>
-          <span style="color: #777;">(1,245 Verified Reviews)</span>
-          <span style="background: #FEF3C7; color: #D97706; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;">#1 BESTSELLER</span>
+          <strong id="pdp-rating-score">4.9 / 5.0</strong>
+          <span style="color: #777;" id="pdp-review-count">(1,245 Verified Reviews)</span>
+          <span id="pdp-bestseller-badge" style="background: #FEF3C7; color: #D97706; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;">#1 BESTSELLER</span>
         </div>
 
         <div class="pdp-price-row">
           <span class="pdp-price" id="pdp-price-display">$16.00 CAD</span>
-          <span class="pdp-price-compare">$19.00 CAD</span>
-          <span class="pdp-discount-pill">16% OFF</span>
+          <span class="pdp-price-compare" id="pdp-price-compare">$19.00 CAD</span>
+          <span class="pdp-discount-pill" id="pdp-discount-pill">16% OFF</span>
         </div>
 
-        <p class="pdp-short-desc">
+        <p class="pdp-short-desc" id="pdp-short-desc">
           A love letter to the quintessential Punjabi-style raw mango pickle. Crisp hand-cut green mangoes steeped in cold-pressed mustard oil, aromatic fennel seeds, bitter-sweet fenugreek, and tart sun-cured spices. Vibrant, tangy, and deeply nostalgic.
         </p>
 
         <!-- Spice Meter -->
-        <div class="pdp-spice-box">
+        <div class="pdp-spice-box" id="pdp-spice-box">
           <div>
-            <div class="pdp-spice-label">Spice Level: Medium Kick</div>
-            <div class="pdp-spice-scoville">~12,000 Scoville Heat Units (SHU)</div>
+            <div class="pdp-spice-label" id="pdp-spice-label">Spice Level: Medium Kick</div>
+            <div class="pdp-spice-scoville" id="pdp-spice-scoville">~12,000 Scoville Heat Units (SHU)</div>
           </div>
           <div class="pdp-spice-meter">
-            <span class="flames">🔥🔥🔥</span>
-            <span style="font-size: 13px; font-weight: 700; color: #D97706;">3 / 5</span>
+            <span class="flames" id="pdp-flames">🔥🔥🔥</span>
+            <span style="font-size: 13px; font-weight: 700; color: #D97706;" id="pdp-spice-ratio">3 / 5</span>
           </div>
         </div>
 
@@ -118,7 +118,7 @@
                 <div class="purchase-option-desc">Single jar delivery</div>
               </div>
             </div>
-            <strong>$16.00 CAD</strong>
+            <strong id="pdp-onetime-price">$16.00 CAD</strong>
           </label>
 
           <label class="purchase-option" id="opt-sub" onclick="selectPurchaseOption('sub')">
@@ -129,14 +129,14 @@
                 <div class="purchase-option-desc">Auto-delivered every 30 days • Cancel anytime</div>
               </div>
             </div>
-            <strong style="color: #15803D;">$13.60 CAD</strong>
+            <strong style="color: #15803D;" id="pdp-sub-price">$13.60 CAD</strong>
           </label>
         </div>
 
         <!-- Pack Selection -->
         <div>
           <span class="pack-selector-label">Select Bundle & Save:</span>
-          <div class="pack-options">
+          <div class="pack-options" id="pdp-pack-options">
             <div class="pack-btn selected" data-pack="1" data-price="16.00">
               <div class="pack-btn-title">1 Jar</div>
               <div class="pack-btn-price">$16.00</div>
@@ -189,8 +189,8 @@
               <span class="pdp-accordion-icon">+</span>
             </div>
             <div class="pdp-accordion-content">
-              <p><strong>Ingredients:</strong> Hand-cut Green Mango (65%), Cold-Pressed Pure Mustard Oil, Iodized Salt, Red Chilli Powder, Fenugreek Seeds (Methi), Fennel Seeds (Saunf), Nigella Seeds (Kalonji), Turmeric Powder, Asafoetida (Hing), Whole Spices.</p>
-              <p style="margin-top: 8px;"><strong>Allergens:</strong> Contains Mustard. Free from artificial preservatives, MSG, synthetic food colors, or added corn syrups. 100% Plant-Based & Naturally Gluten-Free.</p>
+              <p><strong>Ingredients:</strong> <span id="pdp-ingredients-text">Hand-cut Green Mango (65%), Cold-Pressed Pure Mustard Oil, Iodized Salt, Red Chilli Powder, Fenugreek Seeds (Methi), Fennel Seeds (Saunf), Nigella Seeds (Kalonji), Turmeric Powder, Asafoetida (Hing), Whole Spices.</span></p>
+              <p style="margin-top: 8px;"><strong>Allergens:</strong> <span id="pdp-allergens-text">Contains Mustard. Free from artificial preservatives, MSG, synthetic food colors, or added corn syrups. 100% Plant-Based & Naturally Gluten-Free.</span></p>
             </div>
           </div>
 
@@ -213,8 +213,7 @@
               <span class="pdp-accordion-icon">+</span>
             </div>
             <div class="pdp-accordion-content">
-              <p><strong>Traditional:</strong> Essential alongside hot aloo parathas with homemade butter, dal tadka with steamed basmati, or yellow moong khichdi.</p>
-              <p style="margin-top: 8px;"><strong>Modern Reimagined:</strong> Smear inside a gourmet sourdough grilled cheese, dollop over morning avocado toast with runny eggs, or mix into Greek yogurt for a smoky-spicy fry dip.</p>
+              <p id="pdp-pairings-text"><strong>Traditional:</strong> Essential alongside hot aloo parathas with homemade butter, dal tadka with steamed basmati, or yellow moong khichdi. <strong>Modern Reimagined:</strong> Smear inside a gourmet sourdough grilled cheese, dollop over morning avocado toast with runny eggs, or mix into Greek yogurt for a smoky-spicy fry dip.</p>
             </div>
           </div>
 
@@ -281,14 +280,14 @@
         <h2 class="section-title">Frequently Paired Together</h2>
       </div>
 
-      <div class="product-grid">
+      <div class="product-grid" id="pdp-cross-sells">
         <div class="product-card">
           <div class="product-card-img-wrap">
             <span class="product-tag heritage">Heritage Collection</span>
-            <img src="images/andhra_fire.jpg" alt="Andhra Fire">
+            <a href="product.html?id=andhra-fire"><img src="images/andhra_fire.jpg" alt="Andhra Fire"></a>
           </div>
           <div class="product-card-body">
-            <h3 class="product-card-title">Andhra Fire</h3>
+            <h3 class="product-card-title"><a href="product.html?id=andhra-fire">Andhra Fire</a></h3>
             <p class="product-card-desc">Spicy tomato, roasted garlic cloves, and curry leaf relish.</p>
             <div class="product-card-footer">
               <div class="product-card-price">$16.00 CAD</div>
@@ -300,10 +299,10 @@
         <div class="product-card">
           <div class="product-card-img-wrap">
             <span class="product-tag studio">Studio Collection</span>
-            <img src="images/smoked_garlic.jpg" alt="Smoked Garlic & Chilli">
+            <a href="product.html?id=smoked-garlic"><img src="images/smoked_garlic.jpg" alt="Smoked Garlic & Chilli"></a>
           </div>
           <div class="product-card-body">
-            <h3 class="product-card-title">Smoked Garlic & Chilli</h3>
+            <h3 class="product-card-title"><a href="product.html?id=smoked-garlic">Smoked Garlic & Chilli</a></h3>
             <p class="product-card-desc">The Indian chili crisp with crunchy garlic and Kashmiri pepper.</p>
             <div class="product-card-footer">
               <div class="product-card-price">$17.50 CAD</div>
@@ -315,10 +314,10 @@
         <div class="product-card">
           <div class="product-card-img-wrap">
             <span class="product-tag heritage">Curated Gift Box</span>
-            <img src="images/tasting_box.jpg" alt="The Tasting Box">
+            <a href="product.html?id=tasting-box"><img src="images/tasting_box.jpg" alt="The Tasting Box"></a>
           </div>
           <div class="product-card-body">
-            <h3 class="product-card-title">The Kairi Tasting Box</h3>
+            <h3 class="product-card-title"><a href="product.html?id=tasting-box">The Kairi Tasting Box</a></h3>
             <p class="product-card-desc">3 full-size jars + complimentary hand-hammered brass spoon.</p>
             <div class="product-card-footer">
               <div class="product-card-price">$39.00 CAD</div>
@@ -334,9 +333,9 @@
   <div id="sticky-buy-bar" class="sticky-buy-bar">
     <div class="sticky-buy-container">
       <div class="sticky-product-info">
-        <img src="images/classic_kairi.jpg" alt="The Classic Kairi">
+        <img id="sticky-pdp-img" src="images/classic_kairi.jpg" alt="The Classic Kairi">
         <div>
-          <div class="sticky-title">The Classic Kairi: Premium Spicy Mango Achar</div>
+          <div class="sticky-title" id="sticky-pdp-title">The Classic Kairi: Premium Spicy Mango Achar</div>
           <div class="sticky-price" id="sticky-price-display">$16.00 CAD • Heritage Collection</div>
         </div>
       </div>
@@ -361,7 +360,7 @@
         <h4>Shop</h4>
         <ul>
           <li><a href="shop.html">Shop All</a></li>
-          <li><a href="product.html">The Classic Kairi</a></li>
+          <li><a href="product.html?id=classic-kairi">The Classic Kairi</a></li>
           <li><a href="shop.html?cat=heritage">The Heritage Collection</a></li>
           <li><a href="shop.html?cat=studio">The Studio Collection</a></li>
           <li><a href="index.html#bundle-builder">Build a Tasting Box</a></li>
@@ -483,7 +482,7 @@
       <nav class="mobile-nav-list">
         <a href="index.html" class="mobile-nav-link">Home</a>
         <a href="shop.html" class="mobile-nav-link">Shop All</a>
-        <a href="product.html" class="mobile-nav-link active">The Classic Kairi</a>
+        <a href="product.html?id=classic-kairi" class="mobile-nav-link active">The Classic Kairi</a>
         <a href="index.html#bundle-builder" class="mobile-nav-link">Build a Box (Save 18%)</a>
         <a href="story.html" class="mobile-nav-link">Our Story & Craft</a>
         <a href="index.html#recipes" class="mobile-nav-link">Pairings & Recipes</a>
@@ -497,63 +496,5 @@
   </aside>
 
   <script src="app.js"></script>
-  <script>
-    let pdpQty = 1;
-    let currentPack = '1';
-    let isSubscription = false;
-
-    function changePdpQty(delta) {
-      pdpQty = Math.max(1, pdpQty + delta);
-      document.getElementById('pdp-qty-val').textContent = pdpQty;
-      updatePdpPrice();
-    }
-
-    function selectPurchaseOption(type) {
-      isSubscription = (type === 'sub');
-      document.getElementById('opt-onetime').classList.toggle('selected', !isSubscription);
-      document.getElementById('opt-sub').classList.toggle('selected', isSubscription);
-      updatePdpPrice();
-    }
-
-    function updatePdpPrice() {
-      let basePrice = 16.00;
-      let variantName = 'Single Jar (350g)';
-      if (currentPack === '3') {
-        basePrice = 42.00;
-        variantName = '3-Pack Bundle';
-      } else if (currentPack === '6') {
-        basePrice = 78.00;
-        variantName = '6-Pack Case';
-      }
-
-      if (isSubscription) {
-        basePrice = basePrice * 0.85; // 15% off
-        variantName += ' (Monthly Subscription)';
-      }
-
-      const totalForQty = (basePrice * pdpQty).toFixed(2);
-      document.getElementById('pdp-price-display').textContent = `$${basePrice.toFixed(2)} CAD`;
-      document.getElementById('main-add-to-cart-btn').textContent = `Add to Cart • $${totalForQty} CAD`;
-      document.getElementById('sticky-btn-price').textContent = `$${totalForQty} CAD`;
-    }
-
-    // Attach pack selectors
-    document.querySelectorAll('.pack-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        currentPack = btn.getAttribute('data-pack');
-        updatePdpPrice();
-      });
-    });
-
-    function handlePdpAddToCart() {
-      let variantName = currentPack === '1' ? 'Single Jar (350g)' : (currentPack === '3' ? '3-Pack Bundle' : '6-Pack Case');
-      let basePrice = currentPack === '1' ? 16.00 : (currentPack === '3' ? 42.00 : 78.00);
-      if (isSubscription) {
-        basePrice = basePrice * 0.85;
-        variantName += ' (Subscription)';
-      }
-      addToCart('classic-kairi', pdpQty, variantName, basePrice);
-    }
-  </script>
 </body>
 </html>
