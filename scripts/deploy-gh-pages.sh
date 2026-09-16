@@ -2,7 +2,7 @@
 # ==============================================================================
 # Script: deploy-gh-pages.sh
 # Purpose: Deploys the Kairi & Co. static storefront mockup directly to the 
-#          gh-pages branch of the repository.
+#          gh-pages branch of the repository without polluting working tree.
 # ==============================================================================
 
 set -euo pipefail
@@ -11,7 +11,7 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SOURCE_DIR="${REPO_ROOT}/src/client/static-mockup"
 BRANCH_NAME="gh-pages"
 
-echo "=== Deploying Kairi & Co. Static Mockup to GitHub Pages (${BRANCH_NAME}) ==="
+echo "=== Packaging Kairi & Co. Static Mockup for GitHub Pages (${BRANCH_NAME}) ==="
 
 if [ ! -d "${SOURCE_DIR}" ]; then
   echo "Error: Source directory '${SOURCE_DIR}' does not exist." >&2
@@ -19,41 +19,38 @@ if [ ! -d "${SOURCE_DIR}" ]; then
 fi
 
 TEMP_DIR="$(mktemp -d)"
-echo "Staging static files in temporary directory: ${TEMP_DIR}"
+echo "Staging static files in isolated directory: ${TEMP_DIR}"
 cp -R "${SOURCE_DIR}/"* "${TEMP_DIR}/"
+cp "${SOURCE_DIR}/.nojekyll" "${TEMP_DIR}/" 2>/dev/null || touch "${TEMP_DIR}/.nojekyll"
+
+# Initialize isolated git repo to construct a pure gh-pages commit
+cd "${TEMP_DIR}"
+git init -q
+git config user.name "Kairi Deployer"
+git config user.email "deploy@kairi-co.local"
+git checkout -q -b "${BRANCH_NAME}"
+git add -A
+git commit -q -m "Deploy Kairi & Co. Storefront Mockup to GitHub Pages [skip ci]"
+
+# Force push into local repository's gh-pages branch
+echo "Updating local branch '${BRANCH_NAME}'..."
+git push -q "${REPO_ROOT}" "${BRANCH_NAME}:${BRANCH_NAME}" --force
 
 cd "${REPO_ROOT}"
-
-CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-echo "Current working branch: ${CURRENT_BRANCH}"
-
-# Create or switch to gh-pages branch as an orphan or update existing
-if git show-ref --quiet --heads "${BRANCH_NAME}"; then
-  echo "Branch '${BRANCH_NAME}' exists locally. Checking it out..."
-  git checkout "${BRANCH_NAME}"
-else
-  echo "Creating orphan branch '${BRANCH_NAME}'..."
-  git checkout --orphan "${BRANCH_NAME}"
-fi
-
-# Clean out old working directory files
-git rm -rf . > /dev/null 2>&1 || true
-
-# Copy static files to the root of gh-pages branch
-cp -R "${TEMP_DIR}/"* ./
-
-# Add .nojekyll so GitHub Pages does not ignore files or parse Jekyll
-touch .nojekyll
-
-git add .
-git commit -m "Deploy Kairi & Co. Storefront Mockup to GitHub Pages [skip ci]" || echo "No changes to commit."
-
-echo "Branch '${BRANCH_NAME}' updated locally."
-echo "To push to GitHub remote, run:"
-echo "  git push origin ${BRANCH_NAME} --force"
-
-# Switch back to original branch
-git checkout "${CURRENT_BRANCH}"
 rm -rf "${TEMP_DIR}"
 
-echo "=== Mockup deployment staging complete. Returned to branch: ${CURRENT_BRANCH} ==="
+echo "✓ Branch '${BRANCH_NAME}' has been cleanly updated locally."
+
+# Automatically push to origin if requested or prompt
+if [ "${1:-}" = "--push" ] || [ "${1:-}" = "-p" ]; then
+  echo "Pushing branch '${BRANCH_NAME}' to remote origin..."
+  git push origin "${BRANCH_NAME}" --force
+  echo "✓ Pushed to origin/${BRANCH_NAME} successfully!"
+else
+  echo "To push to GitHub, run:"
+  echo "  git push origin ${BRANCH_NAME} --force"
+  echo "Or re-run this script with --push flag:"
+  echo "  ./scripts/deploy-gh-pages.sh --push"
+fi
+
+echo "=== Deployment package ready ==="
