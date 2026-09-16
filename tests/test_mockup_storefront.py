@@ -134,18 +134,17 @@ def test_styles_mobile_compatibility():
     print("✓ CSS safe areas, 100dvh viewport height, and iOS/Android touch rules verified.")
 
 def test_github_pages_deployment_artifacts():
-    wf_path = os.path.join(REPO_ROOT, ".github", "workflows", "deploy-pages.yml")
-    assert os.path.exists(wf_path), "GitHub Pages workflow .github/workflows/deploy-pages.yml missing"
-    with open(wf_path, "r", encoding="utf-8") as f:
-        wf = f.read()
-    assert "actions/upload-pages-artifact" in wf, "upload-pages-artifact missing in workflow"
-    assert "actions/deploy-pages" in wf, "deploy-pages action missing in workflow"
-    assert "src/client/static-mockup" in wf, "path to static-mockup missing in workflow"
+    nojekyll_path = os.path.join(BASE_DIR, ".nojekyll")
+    assert os.path.exists(nojekyll_path), ".nojekyll missing from static-mockup"
 
     script_path = os.path.join(REPO_ROOT, "scripts", "deploy-gh-pages.sh")
     assert os.path.exists(script_path), "scripts/deploy-gh-pages.sh missing"
     assert os.access(script_path, os.X_OK), "scripts/deploy-gh-pages.sh is not executable"
-    print("✓ GitHub Pages workflow and deployment script verified.")
+    with open(script_path, "r", encoding="utf-8") as f:
+        script = f.read()
+    assert "BRANCH_NAME=\"gh-pages\"" in script, "gh-pages branch target missing in script"
+    assert ".nojekyll" in script, ".nojekyll copy missing in script"
+    print("✓ GitHub Pages gh-pages branch deployment architecture and .nojekyll verified.")
 
 if __name__ == "__main__":
     print("--- RUNNING QA ADVERSARY (LOOP A) & DEVOPS AUDITOR (LOOP B) VERIFICATION ---")
